@@ -1,68 +1,68 @@
 import { useEffect, useRef, useState } from 'react'
-import { ExternalLink, TrendingUp, Search, Code2, FileText } from 'lucide-react'
+import { TrendingUp, Search, Code2, FileText, Target, ArrowRight } from 'lucide-react'
 
 const categories = ['All', 'Web Engine', 'SEO', 'Content', 'Software']
 
-const projects = [
+const services = [
   {
     category: 'SEO',
     tag: 'SEO',
-    title: 'E-Commerce Fashion Brand',
-    description: 'Took a fashion e-commerce from page 5 to #1 ranking for 30+ competitive keywords in 4 months.',
-    result: '+450% Organic Traffic',
+    industry: 'E-Commerce',
     icon: Search,
     color: 'teal',
-    industry: 'E-Commerce',
+    title: 'SEO for Online Stores',
+    description: "We research your best keywords, fix technical issues, and build your site's authority so your products show up when people search.",
+    goal: 'Target: Page 1 Rankings',
   },
   {
     category: 'Web Engine',
     tag: 'Web Engine',
-    title: 'Restaurant Chain Website',
-    description: 'Redesigned and rebuilt a multi-location restaurant website with online ordering and reservation system.',
-    result: '3x More Bookings',
+    industry: 'Any Industry',
     icon: TrendingUp,
     color: 'gold',
-    industry: 'F&B',
+    title: 'High-Converting Websites',
+    description: 'We design fast, mobile-first websites that look great and guide your visitors toward taking action — inquiry, purchase, or call.',
+    goal: 'Target: More Conversions',
   },
   {
     category: 'Software',
     tag: 'Software',
-    title: 'HR Management System',
-    description: 'Custom-built HR platform handling payroll, attendance, and performance tracking for 500+ employees.',
-    result: '60% Faster HR Ops',
+    industry: 'Business & Enterprise',
     icon: Code2,
     color: 'teal',
-    industry: 'Enterprise',
+    title: 'Custom Business Systems',
+    description: 'We build web apps and internal tools tailored to your workflow — from simple dashboards to complex management systems.',
+    goal: 'Target: Save Time & Cost',
   },
   {
     category: 'Content',
     tag: 'Content',
-    title: 'FinTech Content Strategy',
-    description: 'Developed 100+ SEO articles for a fintech startup that doubled their inbound leads in 6 months.',
-    result: '2x Inbound Leads',
+    industry: 'All Sectors',
     icon: FileText,
     color: 'gold',
-    industry: 'FinTech',
+    title: 'SEO Content Strategy',
+    description: 'We write articles, landing pages, and product copy that rank on Google and speak directly to your ideal customer.',
+    goal: 'Target: Organic Inbound Leads',
   },
   {
     category: 'Web Engine',
     tag: 'Web Engine',
-    title: 'Property Agency Portal',
-    description: 'Built a full real-estate listing portal with search, filter, virtual tour integration, and CRM.',
-    result: '40% More Inquiries',
+    industry: 'Property & F&B',
     icon: TrendingUp,
     color: 'gold',
-    industry: 'Property',
+    title: 'Business Portals & Catalogs',
+    description: 'Need a listing portal, booking system, or product catalog? We build feature-rich platforms built around your business model.',
+    goal: 'Target: Better User Experience',
   },
   {
     category: 'SEO',
     tag: 'SEO',
-    title: 'Healthcare Clinic Network',
-    description: 'Local SEO strategy for 8 clinic locations, dominating "near me" searches across 3 cities.',
-    result: '#1 Local Pack',
+    industry: 'Local Business',
     icon: Search,
     color: 'teal',
-    industry: 'Healthcare',
+    title: 'Local SEO',
+    description: 'We help your business appear in Google Maps and "near me" searches so local customers can find you before they find your competitors.',
+    goal: 'Target: Local Visibility',
   },
 ]
 
@@ -71,13 +71,13 @@ const colorMap = {
     bg: 'bg-teal-50',
     icon: 'text-teal-500',
     badge: 'bg-teal-100 text-teal-700',
-    result: 'text-teal-600 bg-teal-50',
+    goal: 'text-teal-600 bg-teal-50',
   },
   gold: {
     bg: 'bg-gold-50',
     icon: 'text-gold-500',
     badge: 'bg-gold-100 text-gold-700',
-    result: 'text-gold-600 bg-gold-50',
+    goal: 'text-gold-600 bg-gold-50',
   },
 }
 
@@ -85,7 +85,7 @@ export default function Portfolio() {
   const sectionRef = useRef(null)
   const [active, setActive] = useState('All')
 
-  const filtered = active === 'All' ? projects : projects.filter(p => p.category === active)
+  const filtered = active === 'All' ? services : services.filter(p => p.category === active)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -107,19 +107,20 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="section-padding bg-gray-50" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
         <div className="text-center mb-10 animate-on-scroll">
           <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-100 rounded-full px-4 py-1.5 mb-4">
             <span className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
-            <span className="text-teal-600 text-sm font-semibold">Our Work</span>
+            <span className="text-teal-600 text-sm font-semibold">What We Do</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark-800 mb-4">
-            Results We've{' '}
-            <span className="text-gradient-teal">Delivered</span>
+            What We're Built{' '}
+            <span className="text-gradient-teal">to Deliver</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Real projects. Real clients. Real growth. Here's a glimpse at what
-            we've achieved for businesses like yours.
+            We may be new, but we know exactly what it takes to grow a business online.
+            Here's a look at what we bring to the table — for you.
           </p>
         </div>
 
@@ -149,16 +150,14 @@ export default function Portfolio() {
                 key={i}
                 className="animate-on-scroll bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
               >
-                {/* Card top image area */}
+                {/* Card top */}
                 <div className={`h-40 ${c.bg} flex items-center justify-center relative overflow-hidden`}>
                   <div className="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center">
                     <p.icon size={28} className={c.icon} />
                   </div>
-                  {/* Industry tag */}
                   <span className="absolute top-4 left-4 px-3 py-1 bg-white/90 text-dark-800 text-xs font-bold rounded-full">
                     {p.industry}
                   </span>
-                  {/* Category tag */}
                   <span className={`absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full ${c.badge}`}>
                     {p.tag}
                   </span>
@@ -167,16 +166,30 @@ export default function Portfolio() {
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-dark-800 mb-2">{p.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{p.description}</p>
-                  {/* Result badge */}
-                  <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-bold ${c.result}`}>
-                    <TrendingUp size={14} />
-                    {p.result}
+                  <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-bold ${c.goal}`}>
+                    <Target size={14} />
+                    {p.goal}
                   </div>
                 </div>
               </div>
             )
           })}
         </div>
+
+        {/* Bottom CTA */}
+        <div className="animate-on-scroll text-center mt-12">
+          <p className="text-gray-500 text-sm mb-4">
+            Have a specific project in mind? Let's talk about what we can build for you.
+          </p>
+          <button
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-xl transition-all duration-200 shadow-md shadow-teal-500/30 hover:scale-105"
+          >
+            Discuss Your Project
+            <ArrowRight size={16} />
+          </button>
+        </div>
+
       </div>
     </section>
   )
