@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
+import RelatedArticles from '../components/RelatedArticles'
 
 const TITLE = 'Strategi Content Marketing yang Efektif untuk Bisnis di Indonesia | NataSEO'
 const DESC = 'Content marketing yang tepat bisa menjadi mesin penghasil pelanggan terbaik tanpa biaya iklan yang membengkak. Pelajari strategi content marketing efektif untuk bisnis Indonesia di sini.'
@@ -165,6 +166,7 @@ export default function ArticleContent() {
               Konsultasi Gratis Sekarang
             </button>
           </div>
+          <RelatedArticles currentSlug="/artikel/strategi-content-marketing-bisnis-indonesia" />
         </div>
       </article>
 

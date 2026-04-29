@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
+import RelatedArticles from '../components/RelatedArticles'
 
 const TITLE = 'Jasa SEO Yogyakarta: Cara Tingkatkan Ranking Google Bisnis Anda | NataSEO'
 const DESC = 'Bisnis sulit ditemukan di Google? Jasa SEO Yogyakarta dari NataSEO membantu Anda tampil di halaman pertama dan mendatangkan pelanggan baru secara organik — tanpa iklan berbayar.'
@@ -50,6 +51,32 @@ export default function ArticleSEO() {
               { "@type": "ListItem", "position": 2, "name": "Jasa SEO Yogyakarta" }
             ]
           }
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Apa itu jasa SEO dan bagaimana cara kerjanya?",
+              "acceptedAnswer": { "@type": "Answer", "text": "SEO (Search Engine Optimization) adalah proses mengoptimasi website agar tampil di halaman pertama Google secara organik. Jasa SEO dari NataSEO mencakup riset keyword, optimasi on-page, pembuatan konten, dan link building untuk meningkatkan ranking bisnis Anda." }
+            },
+            {
+              "@type": "Question",
+              "name": "Berapa lama hasil SEO bisa terlihat?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Hasil SEO umumnya mulai terlihat dalam 3-6 bulan. Faktor yang mempengaruhi adalah tingkat persaingan keyword, kondisi website saat ini, dan konsistensi optimasi yang dilakukan. Keyword lokal seperti 'jasa SEO Yogyakarta' biasanya lebih cepat terlihat hasilnya." }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah SEO lebih baik dari Google Ads?",
+              "acceptedAnswer": { "@type": "Answer", "text": "SEO dan Google Ads punya keunggulan masing-masing. SEO memberikan traffic organik jangka panjang tanpa biaya per klik, sementara Google Ads memberikan hasil instan tapi berhenti saat anggaran habis. Untuk bisnis jangka panjang, SEO lebih cost-effective." }
+            },
+            {
+              "@type": "Question",
+              "name": "Berapa biaya jasa SEO Yogyakarta dari NataSEO?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Biaya jasa SEO NataSEO disesuaikan dengan kebutuhan dan skala bisnis Anda. Silakan hubungi kami di hello@pandupradana.my.id atau WhatsApp +62-851-5996-6646 untuk konsultasi gratis dan penawaran yang sesuai budget Anda." }
+            }
+          ]
         })}</script>
       </Helmet>
       {/* Top nav */}
@@ -168,6 +195,7 @@ export default function ArticleSEO() {
             >
               Konsultasi Gratis Sekarang
             </button>
+          <RelatedArticles currentSlug="/artikel/jasa-seo-yogyakarta" />
           </div>
         </div>
       </article>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
+import RelatedArticles from '../components/RelatedArticles'
 
 const TITLE = 'Cara Daftar Google Business Profile untuk Bisnis Lokal Indonesia | NataSEO'
 const DESC = 'Google Business Profile adalah tool SEO lokal paling powerful — dan gratis. Panduan lengkap cara daftar dan optimasi GBP agar bisnis Anda muncul di Google Maps dan pencarian lokal.'
@@ -142,6 +143,7 @@ export default function ArticleGBP() {
               Konsultasi Gratis Sekarang
             </button>
           </div>
+          <RelatedArticles currentSlug="/artikel/cara-daftar-google-business-profile" />
         </div>
       </article>
 

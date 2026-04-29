@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
+import RelatedArticles from '../components/RelatedArticles'
 
 const TITLE = 'SEO vs Google Ads: Mana yang Lebih Baik untuk Bisnis Anda? | NataSEO'
 const DESC = 'SEO atau Google Ads? Perbandingan lengkap biaya, kecepatan hasil, dan ROI jangka panjang. Temukan strategi mana yang paling tepat untuk situasi bisnis Anda saat ini.'
@@ -50,6 +51,32 @@ export default function ArticleSEOvsAds() {
               { "@type": "ListItem", "position": 2, "name": "SEO vs Google Ads" }
             ]
           }
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Mana yang lebih murah, SEO atau Google Ads?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Google Ads memiliki biaya per klik yang terus berjalan selama iklan aktif. SEO membutuhkan investasi di awal yang lebih besar tapi traffic yang dihasilkan gratis dan berlangsung terus. Jangka panjang, SEO jauh lebih hemat karena tidak ada biaya per klik." }
+            },
+            {
+              "@type": "Question",
+              "name": "Kapan sebaiknya pakai Google Ads daripada SEO?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Google Ads lebih tepat saat Anda butuh hasil instan (misalnya promosi terbatas waktu), menguji produk baru, atau bersaing di keyword yang sangat kompetitif. SEO lebih baik untuk membangun kehadiran online jangka panjang yang berkelanjutan." }
+            },
+            {
+              "@type": "Question",
+              "name": "Bisakah SEO dan Google Ads dijalankan bersamaan?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Bisa, dan sering kali ini adalah strategi terbaik. Google Ads menghasilkan traffic instan sementara SEO dibangun, lalu ketika SEO sudah menghasilkan traffic organik, anggaran Ads bisa dikurangi. Kombinasi keduanya memaksimalkan visibilitas di Google." }
+            },
+            {
+              "@type": "Question",
+              "name": "Berapa lama SEO mulai mengalahkan Google Ads dari sisi ROI?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Umumnya SEO mulai memberikan ROI yang lebih baik dari Google Ads setelah 6-12 bulan, tergantung persaingan industri. Setelah website ranking di halaman pertama, traffic organik terus mengalir tanpa biaya tambahan, sementara Google Ads berhenti begitu anggaran habis." }
+            }
+          ]
         })}</script>
       </Helmet>
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
@@ -184,6 +211,7 @@ export default function ArticleSEOvsAds() {
               Konsultasi Gratis Sekarang
             </button>
           </div>
+          <RelatedArticles currentSlug="/artikel/seo-vs-google-ads" />
         </div>
       </article>
 

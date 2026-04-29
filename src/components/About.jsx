@@ -47,7 +47,11 @@ export default function About() {
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-dark-800">
               <img
                 src={profileImg}
-                alt="Pandu Pradana"
+                alt="Pandu Pradana — Founder NataSEO Yogyakarta"
+                width={600}
+                height={804}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-top"
               />
               {/* Name card overlay */}

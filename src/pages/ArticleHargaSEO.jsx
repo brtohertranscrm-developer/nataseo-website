@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
+import RelatedArticles from '../components/RelatedArticles'
 
 const TITLE = 'Berapa Biaya Jasa SEO di Indonesia? Panduan Harga 2026 | NataSEO'
 const DESC = 'Panduan lengkap harga jasa SEO di Indonesia 2026. Pelajari faktor yang mempengaruhi biaya, kisaran harga pasar, dan cara memilih paket SEO yang tepat untuk anggaran Anda.'
@@ -50,6 +51,32 @@ export default function ArticleHargaSEO() {
               { "@type": "ListItem", "position": 2, "name": "Biaya Jasa SEO Indonesia" }
             ]
           }
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Berapa kisaran harga jasa SEO di Indonesia?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Harga jasa SEO di Indonesia berkisar dari Rp 1-3 juta per bulan untuk paket dasar lokal, Rp 3-8 juta untuk SEO nasional, hingga Rp 10 juta ke atas untuk industri kompetitif. Harga bervariasi tergantung persaingan keyword, kondisi website, dan cakupan layanan." }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah ada jasa SEO murah yang tetap berkualitas?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Ada, terutama untuk SEO lokal. NataSEO menawarkan jasa SEO Yogyakarta dengan harga kompetitif karena fokus pada keyword lokal yang persaingannya lebih rendah. Yang penting hindari jasa SEO yang menjanjikan hasil instan karena berisiko terkena penalti Google." }
+            },
+            {
+              "@type": "Question",
+              "name": "Apa yang membuat harga jasa SEO berbeda-beda?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Perbedaan harga dipengaruhi oleh: tingkat persaingan keyword target, kondisi awal website (domain authority, backlink), cakupan layanan (on-page saja vs full SEO), pengalaman agency, dan target area (lokal, nasional, atau internasional)." }
+            },
+            {
+              "@type": "Question",
+              "name": "Lebih baik bayar SEO bulanan atau sekali bayar?",
+              "acceptedAnswer": { "@type": "Answer", "text": "SEO adalah proses berkelanjutan, bukan sekali jalan. Model bulanan lebih disarankan karena algoritma Google terus berubah dan kompetitor terus berupaya. Paket sekali bayar biasanya hanya untuk audit atau setup awal, bukan untuk mempertahankan dan meningkatkan ranking." }
+            }
+          ]
         })}</script>
       </Helmet>
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
@@ -161,6 +188,7 @@ export default function ArticleHargaSEO() {
               Minta Penawaran Gratis
             </button>
           </div>
+          <RelatedArticles currentSlug="/artikel/biaya-jasa-seo-indonesia" />
         </div>
       </article>
 

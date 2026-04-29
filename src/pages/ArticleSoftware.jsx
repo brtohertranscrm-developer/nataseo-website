@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
+import RelatedArticles from '../components/RelatedArticles'
 
 const TITLE = 'Jasa Software Development Yogyakarta: Solusi Sistem Custom untuk Bisnis Anda | NataSEO'
 const DESC = 'Proses bisnis yang manual menghambat pertumbuhan? Jasa software development Yogyakarta dari NataSEO membangun sistem custom yang benar-benar sesuai kebutuhan bisnis Anda.'
@@ -156,6 +157,7 @@ export default function ArticleSoftware() {
               Diskusi Kebutuhan Anda
             </button>
           </div>
+          <RelatedArticles currentSlug="/artikel/jasa-software-development-yogyakarta" />
         </div>
       </article>
 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
+import RelatedArticles from '../components/RelatedArticles'
 
 const TITLE = 'Jasa Pembuatan Website Yogyakarta: Website Profesional untuk Bisnis Anda | NataSEO'
 const DESC = 'Di era digital, website profesional adalah investasi terpenting. Jasa pembuatan website Yogyakarta dari NataSEO hadir untuk membantu bisnis Anda tampil online dan menghasilkan pelanggan baru.'
@@ -151,6 +152,7 @@ export default function ArticleWeb() {
               Konsultasi Gratis Sekarang
             </button>
           </div>
+          <RelatedArticles currentSlug="/artikel/jasa-pembuatan-website-yogyakarta" />
         </div>
       </article>
 
