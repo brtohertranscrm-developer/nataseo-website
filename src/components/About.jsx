@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Award, Users, Target, TrendingUp, CheckCircle } from 'lucide-react'
-import profileImg from '../assets/profile.png'
+import profileImg from '../assets/profile.webp'
 
 const highlights = [
   { icon: Award, label: 'Services We Offer', value: '4' },

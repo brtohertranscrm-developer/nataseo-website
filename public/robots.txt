@@ -1,4 +1,25 @@
 User-agent: *
 Allow: /
+Crawl-delay: 1
+
+# AI Crawlers — allowed to index content
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow build artifacts
+User-agent: *
+Disallow: /assets/
 
 Sitemap: https://nataseo.asia/sitemap.xml
