@@ -2,18 +2,18 @@ import { useEffect, useRef } from 'react'
 import { Award, Users, Target, TrendingUp, CheckCircle } from 'lucide-react'
 
 const highlights = [
-  { icon: Award, label: 'Award Winning Agency', value: '5+ Awards' },
-  { icon: Users, label: 'Happy Clients', value: '150+' },
-  { icon: Target, label: 'Success Rate', value: '98%' },
-  { icon: TrendingUp, label: 'Revenue Generated', value: '$2M+' },
+  { icon: Award, label: 'Services We Offer', value: '4' },
+  { icon: Users, label: 'Spots Available Now', value: 'Open' },
+  { icon: Target, label: 'Full Commitment', value: '100%' },
+  { icon: TrendingUp, label: 'Response Time', value: '<24h' },
 ]
 
 const points = [
-  'Certified Google Partner & SEO Specialists',
+  'SEO specialists focused on real, measurable rankings',
   'Full-stack team: design, dev, content & strategy',
-  'Data-driven approach with monthly performance reports',
-  'Dedicated account manager for every client',
-  'Proven track record across 15+ industries',
+  'Data-driven approach with clear performance reports',
+  'Direct communication — no middlemen, no agency fluff',
+  'Early clients get priority access and exclusive pricing',
 ]
 
 export default function About() {
@@ -64,14 +64,14 @@ export default function About() {
               />
             </div>
 
-            {/* Experience badge */}
+            {/* Launch badge */}
             <div className="absolute -bottom-6 -right-4 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-4">
               <div className="w-14 h-14 bg-teal-500 rounded-xl flex items-center justify-center">
-                <span className="text-white text-xl font-extrabold">5+</span>
+                <span className="text-white text-xl font-extrabold">NEW</span>
               </div>
               <div>
-                <div className="text-dark-800 font-bold text-sm">Years of</div>
-                <div className="text-teal-500 font-bold">Excellence</div>
+                <div className="text-dark-800 font-bold text-sm">Just</div>
+                <div className="text-teal-500 font-bold">Launched 🚀</div>
               </div>
             </div>
 
@@ -92,15 +92,14 @@ export default function About() {
             </h2>
 
             <p className="animate-on-scroll text-gray-500 leading-relaxed mb-6">
-              NataSEO is a full-service digital agency based in Indonesia. Since 2019,
-              we've been helping businesses of all sizes — from startups to enterprises —
-              build their digital presence, rank higher on Google, and convert visitors
-              into loyal customers.
+              NataSEO is a fresh digital agency based in Yogyakarta, Indonesia. We just launched —
+              and we're ready to help businesses of all sizes build their digital presence,
+              rank higher on Google, and convert visitors into loyal customers.
             </p>
             <p className="animate-on-scroll text-gray-500 leading-relaxed mb-8">
               Our multidisciplinary team of SEO specialists, web developers, content
-              strategists, and software engineers work in harmony to deliver results
-              that matter to your bottom line.
+              strategists, and software engineers are hungry to prove themselves —
+              and your success is exactly how we do that.
             </p>
 
             {/* Points */}

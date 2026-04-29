@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react'
 import { ArrowRight, Play, TrendingUp, Search, FileText, Code2 } from 'lucide-react'
 
 const floatingCards = [
-  { icon: TrendingUp, label: 'SEO Traffic', value: '+320%', color: 'text-teal-500', bg: 'bg-teal-50' },
-  { icon: Search, label: 'Rank #1 Google', value: '50+ Keywords', color: 'text-gold-500', bg: 'bg-gold-50' },
-  { icon: Code2, label: 'Projects Done', value: '200+', color: 'text-teal-500', bg: 'bg-teal-50' },
+  { icon: TrendingUp, label: 'SEO Ready', value: 'On-Page & Off', color: 'text-teal-500', bg: 'bg-teal-50' },
+  { icon: Search, label: 'Google Focused', value: 'Rank Higher', color: 'text-gold-500', bg: 'bg-gold-50' },
+  { icon: Code2, label: 'Open for Projects', value: 'Start Now', color: 'text-teal-500', bg: 'bg-teal-50' },
 ]
 
 export default function Hero() {
@@ -12,9 +12,9 @@ export default function Hero() {
 
   useEffect(() => {
     const targets = [
-      { el: document.getElementById('stat-1'), target: 200, suffix: '+' },
-      { el: document.getElementById('stat-2'), target: 98, suffix: '%' },
-      { el: document.getElementById('stat-3'), target: 5, suffix: '+' },
+      { el: document.getElementById('stat-1'), target: 4, suffix: '' },
+      { el: document.getElementById('stat-2'), target: 100, suffix: '%' },
+      { el: document.getElementById('stat-3'), target: 24, suffix: 'h' },
     ]
     targets.forEach(({ el, target, suffix }) => {
       if (!el) return
@@ -59,7 +59,7 @@ export default function Hero() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-teal-500/15 border border-teal-500/30 rounded-full px-4 py-1.5 mb-6">
               <span className="w-2 h-2 bg-teal-400 rounded-full animate-pulse" />
-              <span className="text-teal-300 text-sm font-medium">Indonesia's #1 Digital Agency</span>
+              <span className="text-teal-300 text-sm font-medium">Fresh Agency, Real Commitment</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
@@ -96,18 +96,18 @@ export default function Hero() {
             {/* Stats row */}
             <div className="flex flex-wrap gap-8">
               <div>
-                <div className="text-3xl font-bold text-white" id="stat-1">0+</div>
-                <div className="text-gray-400 text-sm mt-1">Projects Completed</div>
+                <div className="text-3xl font-bold text-white" id="stat-1">0</div>
+                <div className="text-gray-400 text-sm mt-1">Services Ready</div>
               </div>
               <div className="w-px bg-white/10" />
               <div>
                 <div className="text-3xl font-bold text-white" id="stat-2">0%</div>
-                <div className="text-gray-400 text-sm mt-1">Client Satisfaction</div>
+                <div className="text-gray-400 text-sm mt-1">Full Commitment</div>
               </div>
               <div className="w-px bg-white/10" />
               <div>
-                <div className="text-3xl font-bold text-white" id="stat-3">0+</div>
-                <div className="text-gray-400 text-sm mt-1">Years Experience</div>
+                <div className="text-3xl font-bold text-white" id="stat-3">0h</div>
+                <div className="text-gray-400 text-sm mt-1">Response Time</div>
               </div>
             </div>
           </div>

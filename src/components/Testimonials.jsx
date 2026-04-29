@@ -4,18 +4,18 @@ import { Star, Rocket, Trophy, HeartHandshake, ArrowRight } from 'lucide-react'
 const perks = [
   {
     icon: Trophy,
-    title: 'Harga Spesial Perdana',
-    desc: 'Klien pertama kami mendapatkan penawaran harga eksklusif yang tidak akan kami ulangi.',
+    title: 'Exclusive Launch Pricing',
+    desc: 'Our first clients get special introductory rates — a one-time offer we won't repeat.',
   },
   {
     icon: HeartHandshake,
-    title: 'Perhatian Penuh',
-    desc: 'Sebagai klien pertama, Anda mendapat prioritas langsung dari tim inti kami.',
+    title: 'Dedicated Attention',
+    desc: 'As an early client, you get direct, hands-on attention from our core team.',
   },
   {
     icon: Rocket,
-    title: 'Hasil Nyata, Bukan Janji',
-    desc: 'Kami lapar akan pencapaian. Kesuksesan Anda adalah portofolio terbaik kami.',
+    title: 'Real Results, Not Promises',
+    desc: 'We're hungry for achievement. Your success is the best portfolio we could ask for.',
   },
 ]
 
@@ -51,15 +51,15 @@ export default function Testimonials() {
         <div className="text-center mb-14 animate-on-scroll">
           <div className="inline-flex items-center gap-2 bg-gold-50 border border-gold-100 rounded-full px-4 py-1.5 mb-4">
             <span className="w-1.5 h-1.5 bg-gold-500 rounded-full" />
-            <span className="text-gold-600 text-sm font-semibold">Jadilah yang Pertama</span>
+            <span className="text-gold-600 text-sm font-semibold">Be the First</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark-800 mb-4">
-            Kami Baru, dan Kami{' '}
-            <span className="text-gradient-gold">Butuh Anda</span>
+            We're New, and We{' '}
+            <span className="text-gradient-gold">Need You</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Kami belum punya testimoni — karena kami baru memulai. Jadilah klien pertama kami
-            dan dapatkan keuntungan eksklusif yang tidak akan datang dua kali.
+            We don't have testimonials yet — because we're just getting started. Be our first client
+            and unlock exclusive benefits that won't come around twice.
           </p>
         </div>
 
@@ -77,24 +77,24 @@ export default function Testimonials() {
             </div>
 
             <p className="text-white/50 text-sm font-medium uppercase tracking-widest mb-4">
-              Menunggu bintang dari Anda
+              Waiting for your stars
             </p>
 
             <h3 className="text-white text-2xl md:text-3xl font-extrabold mb-4 leading-snug">
-              "Nama bisnis Anda bisa menjadi<br />
-              <span className="text-teal-400">kisah sukses pertama kami."</span>
+              "Your business name could be<br />
+              <span className="text-teal-400">our very first success story."</span>
             </h3>
 
             <p className="text-gray-400 text-base mb-8">
-              Kami berkomitmen memberikan hasil terbaik karena reputasi kami dimulai dari Anda.
-              Hubungi kami sekarang dan mari wujudkan bersama.
+              We're fully committed to delivering our best work — because our reputation
+              starts with you. Reach out now and let's build something great together.
             </p>
 
             <button
               onClick={scrollToContact}
               className="inline-flex items-center gap-2 px-8 py-4 bg-teal-500 hover:bg-teal-400 text-white font-bold rounded-2xl transition-all duration-200 shadow-lg shadow-teal-500/30 hover:scale-105 text-base"
             >
-              Jadilah Klien Pertama Kami
+              Become Our First Client
               <ArrowRight size={18} />
             </button>
           </div>
@@ -119,7 +119,7 @@ export default function Testimonials() {
         {/* Bottom nudge */}
         <div className="animate-on-scroll text-center mt-12">
           <p className="text-gray-400 text-sm">
-            Konsultasi gratis · Tanpa komitmen · Respons dalam 24 jam
+            Free consultation · No obligations · Response within 24 hours
           </p>
         </div>
 

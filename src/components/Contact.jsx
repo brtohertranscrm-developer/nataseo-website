@@ -70,7 +70,7 @@ export default function Contact() {
               {[
                 { icon: Mail, label: 'Email', value: 'hello@pandupradana.my.id', href: 'mailto:hello@pandupradana.my.id' },
                 { icon: Phone, label: 'WhatsApp', value: '+62 851-5996-6646', href: 'https://wa.me/6285159966646' },
-                { icon: MapPin, label: 'Office', value: 'Jakarta, Indonesia' },
+                { icon: MapPin, label: 'Office', value: 'Yogyakarta, Indonesia' },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">

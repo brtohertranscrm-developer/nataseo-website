@@ -110,7 +110,7 @@ export default function Footer() {
               {[
                 { icon: Mail, value: 'hello@pandupradana.my.id', href: 'mailto:hello@pandupradana.my.id' },
                 { icon: Phone, value: '+62 851-5996-6646', href: 'https://wa.me/6285159966646' },
-                { icon: MapPin, value: 'Jakarta, Indonesia' },
+                { icon: MapPin, value: 'Yogyakarta, Indonesia' },
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-2.5 text-sm text-gray-400">
                   <item.icon size={14} className="text-teal-400 flex-shrink-0" />
