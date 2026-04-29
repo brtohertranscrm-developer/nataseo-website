@@ -1,18 +1,57 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
+
+const TITLE = 'Jasa SEO Yogyakarta: Cara Tingkatkan Ranking Google Bisnis Anda | NataSEO'
+const DESC = 'Bisnis sulit ditemukan di Google? Jasa SEO Yogyakarta dari NataSEO membantu Anda tampil di halaman pertama dan mendatangkan pelanggan baru secara organik — tanpa iklan berbayar.'
+const URL = 'https://nataseo.asia/artikel/jasa-seo-yogyakarta'
 
 export default function ArticleSEO() {
   const navigate = useNavigate()
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Jasa SEO Yogyakarta: Cara Tingkatkan Ranking Google Bisnis Anda | NataSEO'
   }, [])
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>{TITLE}</title>
+        <meta name="description" content={DESC} />
+        <link rel="canonical" href={URL} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESC} />
+        <meta property="og:url" content={URL} />
+        <meta property="og:image" content="https://nataseo.asia/og-image.png" />
+        <meta property="og:locale" content="id_ID" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={TITLE} />
+        <meta name="twitter:description" content={DESC} />
+        <meta name="twitter:image" content="https://nataseo.asia/og-image.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Jasa SEO Yogyakarta: Cara Tingkatkan Ranking Google Bisnis Anda",
+          "description": DESC,
+          "url": URL,
+          "datePublished": "2026-04-29",
+          "dateModified": "2026-04-29",
+          "author": { "@type": "Organization", "name": "NataSEO", "url": "https://nataseo.asia" },
+          "publisher": { "@type": "Organization", "name": "NataSEO", "logo": { "@type": "ImageObject", "url": "https://nataseo.asia/favicon.svg" } },
+          "image": "https://nataseo.asia/og-image.png",
+          "inLanguage": "id",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://nataseo.asia" },
+              { "@type": "ListItem", "position": 2, "name": "Jasa SEO Yogyakarta" }
+            ]
+          }
+        })}</script>
+      </Helmet>
       {/* Top nav */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
