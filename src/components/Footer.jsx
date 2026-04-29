@@ -108,8 +108,8 @@ export default function Footer() {
             {/* Contact info */}
             <ul className="space-y-3 mb-6">
               {[
-                { icon: Mail, value: 'hello@nataseo.id', href: 'mailto:hello@nataseo.id' },
-                { icon: Phone, value: '+62 812-3456-7890', href: 'https://wa.me/628123456789' },
+                { icon: Mail, value: 'hello@pandupradana.my.id', href: 'mailto:hello@pandupradana.my.id' },
+                { icon: Phone, value: '+62 851-5996-6646', href: 'https://wa.me/6285159966646' },
                 { icon: MapPin, value: 'Jakarta, Indonesia' },
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-2.5 text-sm text-gray-400">

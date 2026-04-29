@@ -68,8 +68,8 @@ export default function Contact() {
 
             <div className="animate-on-scroll space-y-4">
               {[
-                { icon: Mail, label: 'Email', value: 'hello@nataseo.id', href: 'mailto:hello@nataseo.id' },
-                { icon: Phone, label: 'WhatsApp', value: '+62 812-3456-7890', href: 'https://wa.me/628123456789' },
+                { icon: Mail, label: 'Email', value: 'hello@pandupradana.my.id', href: 'mailto:hello@pandupradana.my.id' },
+                { icon: Phone, label: 'WhatsApp', value: '+62 851-5996-6646', href: 'https://wa.me/6285159966646' },
                 { icon: MapPin, label: 'Office', value: 'Jakarta, Indonesia' },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4">
@@ -93,7 +93,7 @@ export default function Contact() {
             {/* WhatsApp CTA */}
             <div className="animate-on-scroll">
               <a
-                href="https://wa.me/628123456789?text=Hi%20NataSEO%2C%20I%27d%20like%20to%20discuss%20a%20project"
+                href="https://wa.me/6285159966646?text=Hi%20NataSEO%2C%20I%27d%20like%20to%20discuss%20a%20project"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 py-3.5 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-all duration-200 text-sm"
