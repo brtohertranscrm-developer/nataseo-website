@@ -12,6 +12,7 @@ export default function Logo({ white = false, size = 'md' }) {
       src={nataseoLogo}
       alt="NataSEO"
       width={sizes[size].width}
+      className="block"
       style={white ? { filter: 'brightness(0) invert(1)' } : undefined}
     />
   )
