@@ -13,6 +13,10 @@ import Blog from './components/Blog'
 import ArticleSEO from './pages/ArticleSEO'
 import ArticleWeb from './pages/ArticleWeb'
 import ArticleContent from './pages/ArticleContent'
+import ArticleSoftware from './pages/ArticleSoftware'
+import ArticleGBP from './pages/ArticleGBP'
+import ArticleSEOvsAds from './pages/ArticleSEOvsAds'
+import ArticleHargaSEO from './pages/ArticleHargaSEO'
 
 function HomePage() {
   return (
@@ -38,6 +42,10 @@ export default function App() {
       <Route path="/artikel/jasa-seo-yogyakarta" element={<ArticleSEO />} />
       <Route path="/artikel/jasa-pembuatan-website-yogyakarta" element={<ArticleWeb />} />
       <Route path="/artikel/strategi-content-marketing-bisnis-indonesia" element={<ArticleContent />} />
+      <Route path="/artikel/jasa-software-development-yogyakarta" element={<ArticleSoftware />} />
+      <Route path="/artikel/cara-daftar-google-business-profile" element={<ArticleGBP />} />
+      <Route path="/artikel/seo-vs-google-ads" element={<ArticleSEOvsAds />} />
+      <Route path="/artikel/biaya-jasa-seo-indonesia" element={<ArticleHargaSEO />} />
     </Routes>
   )
 }
