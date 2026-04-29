@@ -5,7 +5,7 @@ const perks = [
   {
     icon: Trophy,
     title: 'Exclusive Launch Pricing',
-    desc: 'Our first clients get special introductory rates — a one-time offer we won't repeat.',
+    desc: "Our first clients get special introductory rates — a one-time offer we won't repeat.",
   },
   {
     icon: HeartHandshake,
@@ -15,7 +15,7 @@ const perks = [
   {
     icon: Rocket,
     title: 'Real Results, Not Promises',
-    desc: 'We're hungry for achievement. Your success is the best portfolio we could ask for.',
+    desc: "We're hungry for achievement. Your success is the best portfolio we could ask for.",
   },
 ]
 
