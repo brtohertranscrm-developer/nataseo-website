@@ -44,7 +44,7 @@ export default function About() {
           {/* Left: Visual */}
           <div className="animate-on-scroll relative">
             {/* Founder photo */}
-            <div className="relative rounded-3xl overflow-hidden bg-dark-800" style={{ height: '520px' }}>
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-dark-800">
               <img
                 src={profileImg}
                 alt="Pandu Pradana"
