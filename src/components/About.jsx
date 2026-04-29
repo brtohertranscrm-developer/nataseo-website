@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Award, Users, Target, TrendingUp, CheckCircle } from 'lucide-react'
+import profileImg from '../assets/profile.png'
 
 const highlights = [
   { icon: Award, label: 'Services We Offer', value: '4' },
@@ -42,26 +43,18 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Visual */}
           <div className="animate-on-scroll relative">
-            {/* Main image placeholder — replace with actual photo */}
-            <div className="relative bg-gradient-to-br from-dark-800 to-dark-700 rounded-3xl overflow-hidden aspect-[4/3]">
-              {/* Decorative content inside the "image" */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                <div className="w-20 h-20 bg-teal-500/20 rounded-2xl flex items-center justify-center mb-4">
-                  <Target size={40} className="text-teal-400" />
-                </div>
-                <p className="text-white/60 text-sm text-center">
-                  Replace this block with your team photo
-                </p>
-              </div>
-
-              {/* Grid overlay */}
-              <div
-                className="absolute inset-0 opacity-10"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(10,181,160,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(10,181,160,0.5) 1px, transparent 1px)`,
-                  backgroundSize: '40px 40px',
-                }}
+            {/* Founder photo */}
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-dark-800">
+              <img
+                src={profileImg}
+                alt="Pandu Pradana"
+                className="w-full h-full object-cover object-top"
               />
+              {/* Name card overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-900/90 to-transparent px-6 py-5">
+                <div className="text-white font-bold text-lg leading-tight">Pandu Pradana</div>
+                <div className="text-teal-400 text-sm font-medium">Founder, NataSEO</div>
+              </div>
             </div>
 
             {/* Launch badge */}
