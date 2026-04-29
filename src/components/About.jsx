@@ -44,11 +44,11 @@ export default function About() {
           {/* Left: Visual */}
           <div className="animate-on-scroll relative">
             {/* Founder photo */}
-            <div className="relative rounded-3xl overflow-hidden aspect-[3/4] bg-dark-800">
+            <div className="relative rounded-3xl overflow-hidden bg-dark-800" style={{ height: '520px' }}>
               <img
                 src={profileImg}
                 alt="Pandu Pradana"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-top"
               />
               {/* Name card overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-900/90 to-transparent px-6 py-5">
