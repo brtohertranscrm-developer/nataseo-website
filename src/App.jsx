@@ -11,6 +11,7 @@ import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Blog from './components/Blog'
+import TechStack from './components/TechStack'
 
 const ArticleSEO = lazy(() => import('./pages/ArticleSEO'))
 const ArticleWeb = lazy(() => import('./pages/ArticleWeb'))
@@ -26,6 +27,7 @@ function HomePage() {
       <Navbar />
       <Hero />
       <Services />
+      <TechStack />
       <About />
       <Portfolio />
       <Process />
