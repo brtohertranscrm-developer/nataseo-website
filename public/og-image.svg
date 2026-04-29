@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1F2D"/>
+      <stop offset="100%" style="stop-color:#0f2d3a"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0AB5A0"/>
+      <stop offset="100%" style="stop-color:#5eead4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="120" r="200" fill="#0AB5A0" opacity="0.06"/>
+  <circle cx="150" cy="520" r="250" fill="#B8972A" opacity="0.05"/>
+
+  <!-- Left accent bar -->
+  <rect x="80" y="180" width="6" height="280" rx="3" fill="url(#teal)"/>
+
+  <!-- Logo text: NATA -->
+  <text x="110" y="310" font-family="Arial Black, sans-serif" font-size="110" font-weight="900" fill="#0AB5A0" letter-spacing="-2">NATA</text>
+
+  <!-- Gold bars (S icon) -->
+  <rect x="542" y="210" width="52" height="24" rx="4" fill="#B8972A"/>
+  <rect x="542" y="258" width="44" height="24" rx="4" fill="#B8972A"/>
+  <rect x="542" y="306" width="52" height="24" rx="4" fill="#B8972A"/>
+
+  <!-- EO -->
+  <text x="606" y="310" font-family="Arial Black, sans-serif" font-size="110" font-weight="900" fill="#0AB5A0" letter-spacing="-2">EO</text>
+
+  <!-- Registered mark -->
+  <text x="820" y="220" font-family="Arial, sans-serif" font-size="28" fill="#0AB5A0">®</text>
+
+  <!-- Tagline -->
+  <text x="110" y="370" font-family="Arial, sans-serif" font-size="22" fill="#94a3b8" letter-spacing="3">WEB ENGINE  ·  SEO  ·  CONTENT WRITING  ·  SOFTWARE SOLUTION</text>
+
+  <!-- Divider -->
+  <rect x="110" y="400" width="980" height="1" fill="#ffffff" opacity="0.08"/>
+
+  <!-- Description -->
+  <text x="110" y="445" font-family="Arial, sans-serif" font-size="26" fill="#cbd5e1">Digital Agency based in Yogyakarta, Indonesia</text>
+  <text x="110" y="485" font-family="Arial, sans-serif" font-size="26" fill="#cbd5e1">Helping businesses grow online — Web, SEO, Content &amp; Software.</text>
+
+  <!-- URL -->
+  <text x="110" y="555" font-family="Arial, sans-serif" font-size="22" fill="#0AB5A0">nataseo.asia</text>
+</svg>
