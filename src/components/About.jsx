@@ -1,0 +1,143 @@
+import { useEffect, useRef } from 'react'
+import { Award, Users, Target, TrendingUp, CheckCircle } from 'lucide-react'
+
+const highlights = [
+  { icon: Award, label: 'Award Winning Agency', value: '5+ Awards' },
+  { icon: Users, label: 'Happy Clients', value: '150+' },
+  { icon: Target, label: 'Success Rate', value: '98%' },
+  { icon: TrendingUp, label: 'Revenue Generated', value: '$2M+' },
+]
+
+const points = [
+  'Certified Google Partner & SEO Specialists',
+  'Full-stack team: design, dev, content & strategy',
+  'Data-driven approach with monthly performance reports',
+  'Dedicated account manager for every client',
+  'Proven track record across 15+ industries',
+]
+
+export default function About() {
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.animate-on-scroll').forEach((el, i) => {
+              setTimeout(() => el.classList.add('visible'), i * 120)
+            })
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <section id="about" className="section-padding bg-gray-50" ref={sectionRef}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left: Visual */}
+          <div className="animate-on-scroll relative">
+            {/* Main image placeholder — replace with actual photo */}
+            <div className="relative bg-gradient-to-br from-dark-800 to-dark-700 rounded-3xl overflow-hidden aspect-[4/3]">
+              {/* Decorative content inside the "image" */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+                <div className="w-20 h-20 bg-teal-500/20 rounded-2xl flex items-center justify-center mb-4">
+                  <Target size={40} className="text-teal-400" />
+                </div>
+                <p className="text-white/60 text-sm text-center">
+                  Replace this block with your team photo
+                </p>
+              </div>
+
+              {/* Grid overlay */}
+              <div
+                className="absolute inset-0 opacity-10"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(10,181,160,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(10,181,160,0.5) 1px, transparent 1px)`,
+                  backgroundSize: '40px 40px',
+                }}
+              />
+            </div>
+
+            {/* Experience badge */}
+            <div className="absolute -bottom-6 -right-4 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-4">
+              <div className="w-14 h-14 bg-teal-500 rounded-xl flex items-center justify-center">
+                <span className="text-white text-xl font-extrabold">5+</span>
+              </div>
+              <div>
+                <div className="text-dark-800 font-bold text-sm">Years of</div>
+                <div className="text-teal-500 font-bold">Excellence</div>
+              </div>
+            </div>
+
+            {/* Gold accent */}
+            <div className="absolute -top-4 -left-4 w-20 h-20 bg-gold-500/10 border-2 border-gold-300/30 rounded-2xl" />
+          </div>
+
+          {/* Right: Text */}
+          <div>
+            <div className="animate-on-scroll inline-flex items-center gap-2 bg-teal-50 border border-teal-100 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
+              <span className="text-teal-600 text-sm font-semibold">About NataSEO</span>
+            </div>
+
+            <h2 className="animate-on-scroll text-3xl sm:text-4xl font-extrabold text-dark-800 mb-5 leading-tight">
+              Your Trusted Partner in{' '}
+              <span className="text-gradient-teal">Digital Growth</span>
+            </h2>
+
+            <p className="animate-on-scroll text-gray-500 leading-relaxed mb-6">
+              NataSEO is a full-service digital agency based in Indonesia. Since 2019,
+              we've been helping businesses of all sizes — from startups to enterprises —
+              build their digital presence, rank higher on Google, and convert visitors
+              into loyal customers.
+            </p>
+            <p className="animate-on-scroll text-gray-500 leading-relaxed mb-8">
+              Our multidisciplinary team of SEO specialists, web developers, content
+              strategists, and software engineers work in harmony to deliver results
+              that matter to your bottom line.
+            </p>
+
+            {/* Points */}
+            <ul className="animate-on-scroll space-y-3 mb-10">
+              {points.map((p, i) => (
+                <li key={i} className="flex items-start gap-3 text-gray-700">
+                  <CheckCircle size={18} className="text-teal-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">{p}</span>
+                </li>
+              ))}
+            </ul>
+
+            <button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="animate-on-scroll inline-flex items-center gap-2 px-7 py-3.5 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-xl transition-all duration-200 shadow-md shadow-teal-500/30 hover:scale-105"
+            >
+              Talk to Our Team
+            </button>
+          </div>
+        </div>
+
+        {/* Stats row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+          {highlights.map((h, i) => (
+            <div
+              key={i}
+              className={`animate-on-scroll animate-delay-${(i + 1) * 100} bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border border-gray-100`}
+            >
+              <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <h.icon size={22} className="text-teal-500" />
+              </div>
+              <div className="text-2xl font-extrabold text-dark-800 mb-1">{h.value}</div>
+              <div className="text-gray-500 text-sm">{h.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
