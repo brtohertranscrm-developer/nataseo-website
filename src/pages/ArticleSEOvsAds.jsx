@@ -26,12 +26,12 @@ export default function ArticleSEOvsAds() {
         <meta property="og:title" content={TITLE} />
         <meta property="og:description" content={DESC} />
         <meta property="og:url" content={URL} />
-        <meta property="og:image" content="https://nataseo.asia/og-image.png" />
+        <meta property="og:image" content="https://nataseo.asia/og/seo-vs-google-ads.svg" />
         <meta property="og:locale" content="id_ID" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESC} />
-        <meta name="twitter:image" content="https://nataseo.asia/og-image.png" />
+        <meta name="twitter:image" content="https://nataseo.asia/og/seo-vs-google-ads.svg" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BlogPosting",
@@ -42,7 +42,7 @@ export default function ArticleSEOvsAds() {
           "dateModified": "2026-04-29",
           "author": { "@type": "Organization", "name": "NataSEO", "url": "https://nataseo.asia" },
           "publisher": { "@type": "Organization", "name": "NataSEO", "logo": { "@type": "ImageObject", "url": "https://nataseo.asia/favicon.svg" } },
-          "image": "https://nataseo.asia/og-image.png",
+          "image": "https://nataseo.asia/og/seo-vs-google-ads.svg",
           "inLanguage": "id",
           "breadcrumb": {
             "@type": "BreadcrumbList",
