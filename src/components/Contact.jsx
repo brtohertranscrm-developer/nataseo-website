@@ -17,9 +17,22 @@ export default function Contact() {
   const handleSubmit = async e => {
     e.preventDefault()
     setLoading(true)
-    await new Promise(r => setTimeout(r, 1200))
-    setLoading(false)
-    setSubmitted(true)
+    try {
+      const res = await fetch('https://formspree.io/f/maqvwvlz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        alert(lang === 'id' ? 'Gagal mengirim pesan. Silakan coba lagi.' : 'Failed to send message. Please try again.')
+      }
+    } catch {
+      alert(lang === 'id' ? 'Gagal mengirim pesan. Silakan coba lagi.' : 'Failed to send message. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   useEffect(() => {
