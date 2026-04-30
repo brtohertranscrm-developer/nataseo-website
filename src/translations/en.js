@@ -460,6 +460,23 @@ const en = {
     ctaDesc: 'Our expert team is ready to deep-dive into your website and build a proven SEO strategy to increase your traffic.',
     ctaBtn: 'Get Our Services',
   },
+
+  // Audit Landing Page Extra Sections
+  auditLanding: {
+    problemTitle: 'Why Do You Need This Audit?',
+    problemDesc: 'Many business owners think their website looks good, but wonder why there are no sales or visitors.',
+    problems: [
+      { title: 'Slow Website', desc: '53% of visitors leave a website that takes longer than 3 seconds to load.' },
+      { title: 'Poor SEO', desc: 'If you are not on the first page of Google, you are losing 90% of potential traffic.' },
+      { title: 'Not Mobile Friendly', desc: 'Most visitors come from phones. Bad UI kills sales.' },
+    ],
+    faqTitle: 'Frequently Asked Questions',
+    faqs: [
+      { q: 'Is this really free?', a: 'Yes, 100% free. You will get an initial performance score at no cost.' },
+      { q: 'What if my score is bad/red?', a: 'Don\'t worry! We will provide actionable recommendations, or you can hire the NataSEO team to fix it for you.' },
+      { q: 'What happens after I fill the form?', a: 'You will instantly see a brief score. Our team will also reach out via WhatsApp to provide a deeper analysis if you want.' },
+    ]
+  },
 }
 
 export default en

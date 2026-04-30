@@ -460,6 +460,23 @@ const id = {
     ctaDesc: 'Tim ahli kami siap membedah website Anda lebih dalam dan menyusun strategi SEO yang terbukti meningkatkan traffic.',
     ctaBtn: 'Ambil Layanan Kami',
   },
+
+  // Audit Landing Page Extra Sections
+  auditLanding: {
+    problemTitle: 'Mengapa Anda Membutuhkan Audit Ini?',
+    problemDesc: 'Banyak pemilik bisnis merasa websitenya sudah bagus, tapi bingung kenapa tidak ada konversi atau pengunjung.',
+    problems: [
+      { title: 'Website Lambat', desc: '53% pengunjung meninggalkan website yang loadingnya lebih dari 3 detik.' },
+      { title: 'SEO Tidak Optimal', desc: 'Jika Anda tidak di halaman pertama Google, Anda kehilangan 90% potensi traffic.' },
+      { title: 'Tidak Mobile Friendly', desc: 'Sebagian besar pengunjung datang dari HP. UI yang buruk membunuh penjualan.' },
+    ],
+    faqTitle: 'Pertanyaan Seputar Audit',
+    faqs: [
+      { q: 'Apakah ini benar-benar gratis?', a: 'Ya, 100% gratis. Anda akan mendapatkan skor performa awal tanpa biaya sepeserpun.' },
+      { q: 'Bagaimana jika skor saya merah/buruk?', a: 'Jangan khawatir! Kami akan memberikan rekomendasi perbaikan, atau Anda bisa menyewa tim NataSEO untuk memperbaikinya.' },
+      { q: 'Apa yang terjadi setelah saya mengisi form?', a: 'Anda akan langsung melihat skor singkat. Tim kami juga akan menghubungi Anda via WhatsApp untuk mengirimkan analisa lebih mendalam jika Anda mau.' },
+    ]
+  },
 }
 
 export default id

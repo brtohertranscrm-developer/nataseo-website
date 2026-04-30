@@ -40,15 +40,34 @@ export default function FreeSEOAudit() {
     return () => clearInterval(interval)
   }, [status, t.audit.scanSteps.length])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!url || !name || !whatsapp) return
+    
     setStatus('scanning')
     setScanStep(0)
+
+    // Silently send lead data to Formspree
+    try {
+      await fetch('https://formspree.io/f/maqvwvlz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          phone: whatsapp,
+          email: 'Tidak diisi (Lead dari SEO Audit)',
+          service: 'Free SEO Audit Lead',
+          message: `Meminta laporan detail SEO Audit untuk website: ${url}`
+        }),
+      })
+    } catch (error) {
+      // Ignore errors silently so user flow is not interrupted
+      console.error('Failed to send lead data', error)
+    }
   }
 
   const handleWhatsAppClick = () => {
-    const text = encodeURIComponent(`Halo NataSEO, saya baru saja melakukan Free SEO Audit untuk website saya: ${url}. Saya ingin mendapatkan laporan detail dan rekomendasi perbaikannya.`)
+    const text = encodeURIComponent(`Halo NataSEO, saya ${name}. Saya baru saja melakukan Free SEO Audit untuk website saya: ${url}. Saya ingin mendapatkan laporan detail dan rekomendasi perbaikannya.`)
     window.open(`https://wa.me/6281329598263?text=${text}`, '_blank')
   }
 
@@ -222,6 +241,40 @@ export default function FreeSEOAudit() {
                 </div>
               </div>
             )}
+          </div>
+
+          {/* New Landing Page Content Below Form */}
+          <div className="mt-24">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-extrabold text-dark-800 mb-4">{t.auditLanding.problemTitle}</h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">{t.auditLanding.problemDesc}</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-24">
+              {t.auditLanding.problems.map((prob, i) => (
+                <div key={i} className="bg-teal-50/50 rounded-2xl p-8 border border-teal-100/50 hover:bg-teal-50 transition-colors">
+                  <div className="w-12 h-12 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center mb-6 font-bold text-xl">
+                    {i + 1}
+                  </div>
+                  <h3 className="text-xl font-bold text-dark-800 mb-3">{prob.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{prob.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="max-w-3xl mx-auto mb-20">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-extrabold text-dark-800">{t.auditLanding.faqTitle}</h2>
+              </div>
+              <div className="space-y-4">
+                {t.auditLanding.faqs.map((faq, i) => (
+                  <div key={i} className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                    <h4 className="text-lg font-bold text-dark-800 mb-2">{faq.q}</h4>
+                    <p className="text-gray-600">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </main>
