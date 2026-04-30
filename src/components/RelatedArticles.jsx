@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 
 const ALL_ARTICLES = [
@@ -12,25 +12,31 @@ const ALL_ARTICLES = [
 ]
 
 const TAG_COLORS = {
-  'SEO': 'bg-teal-50 text-teal-600',
+  'SEO':     'bg-teal-50 text-teal-600',
   'SEO Lokal': 'bg-teal-50 text-teal-600',
-  'Web': 'bg-gold-50 text-gold-600',
+  'Web':     'bg-gold-50 text-gold-600',
   'Content': 'bg-purple-50 text-purple-600',
-  'Software': 'bg-blue-50 text-blue-600',
+  'Software':'bg-blue-50 text-blue-600',
 }
 
 export default function RelatedArticles({ currentSlug }) {
-  const navigate = useNavigate()
-  const related = ALL_ARTICLES.filter(a => a.slug !== currentSlug).slice(0, 3)
+  const currentTag = ALL_ARTICLES.find(a => a.slug === currentSlug)?.tag
+  const others = ALL_ARTICLES.filter(a => a.slug !== currentSlug)
+
+  // Prioritize same-tag articles, then fill up to 3
+  const sameTag = others.filter(a => a.tag === currentTag)
+  const different = others.filter(a => a.tag !== currentTag)
+  const related = [...sameTag, ...different].slice(0, 3)
 
   return (
     <div className="mt-12 pt-10 border-t border-gray-100">
       <h3 className="text-lg font-bold text-dark-800 mb-5">Artikel Terkait</h3>
       <div className="grid sm:grid-cols-3 gap-4">
         {related.map(article => (
-          <button
+          <Link
             key={article.slug}
-            onClick={() => { navigate(article.slug); window.scrollTo(0, 0) }}
+            to={article.slug}
+            onClick={() => window.scrollTo(0, 0)}
             className="text-left p-4 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-teal-50/30 transition-all duration-200 group"
           >
             <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-2 ${TAG_COLORS[article.tag] || 'bg-gray-100 text-gray-600'}`}>
@@ -42,7 +48,7 @@ export default function RelatedArticles({ currentSlug }) {
             <span className="inline-flex items-center gap-1 text-xs text-teal-500 mt-2 font-medium">
               Baca artikel <ArrowRight size={11} />
             </span>
-          </button>
+          </Link>
         ))}
       </div>
     </div>
