@@ -13,6 +13,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Blog from './components/Blog'
 import TechStack from './components/TechStack'
+import WhatsAppButton from './components/WhatsAppButton'
 
 const ArticleSEO = lazy(() => import('./pages/ArticleSEO'))
 const ArticleWeb = lazy(() => import('./pages/ArticleWeb'))
@@ -55,6 +56,7 @@ function HomePage() {
       <Blog />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }
