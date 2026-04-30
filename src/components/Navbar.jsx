@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Logo from './Logo'
 import { useLanguage } from '../contexts/LanguageContext'
 import id from '../translations/id'
@@ -21,6 +22,8 @@ export default function Navbar() {
   const [active, setActive] = useState('home')
   const { lang, toggle } = useLanguage()
   const t = lang === 'id' ? id : en
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -28,17 +31,33 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      const id = location.hash.replace('#', '')
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+        setActive(id)
+      }, 100)
+    }
+  }, [location])
+
   const scrollTo = (href) => {
-    const id = href.replace('#', '')
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     setOpen(false)
-    setActive(id)
+    if (location.pathname !== '/') {
+      navigate(`/${href}`)
+    } else {
+      const id = href.replace('#', '')
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      setActive(id)
+    }
   }
+
+  const isDarkBg = location.pathname === '/' && !scrolled
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        !isDarkBg
           ? 'bg-white/95 backdrop-blur-sm shadow-lg shadow-teal-500/5'
           : 'bg-transparent'
       }`}
@@ -47,7 +66,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <button onClick={() => scrollTo('#home')} className="flex-shrink-0 flex items-center">
-            <Logo size="md" white={!scrolled} />
+            <Logo size="md" white={isDarkBg} />
           </button>
 
           {/* Desktop nav */}
@@ -59,7 +78,7 @@ export default function Navbar() {
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   active === link.href.replace('#', '')
                     ? 'text-teal-500 bg-teal-50'
-                    : scrolled
+                    : !isDarkBg
                     ? 'text-dark-800 hover:text-teal-500 hover:bg-teal-50'
                     : 'text-white/90 hover:text-white hover:bg-white/10'
                 }`}
@@ -75,7 +94,7 @@ export default function Navbar() {
             <button
               onClick={toggle}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all duration-200 ${
-                scrolled
+                !isDarkBg
                   ? 'border-gray-200 text-dark-800 hover:border-teal-400 hover:text-teal-600'
                   : 'border-white/30 text-white hover:border-white hover:bg-white/10'
               }`}
@@ -94,7 +113,7 @@ export default function Navbar() {
           <button
             onClick={() => setOpen(!open)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              scrolled ? 'text-dark-800 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+              !isDarkBg ? 'text-dark-800 hover:bg-gray-100' : 'text-white hover:bg-white/10'
             }`}
           >
             {open ? <X size={22} /> : <Menu size={22} />}

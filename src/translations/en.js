@@ -436,6 +436,30 @@ const en = {
   article: {
     backBtn: 'Back to Home',
   },
+
+  // SEO Audit Page
+  audit: {
+    title: 'Free Quick SEO Audit',
+    subtitle: 'Check your website health in seconds',
+    desc: 'Enter your website URL and get a quick overview of your SEO performance, speed, and security.',
+    urlPlaceholder: 'https://your-website.com',
+    namePlaceholder: 'Your Name',
+    whatsappPlaceholder: 'Your WhatsApp Number',
+    submitBtn: 'Start Audit Now',
+    scanning: 'Analyzing Website...',
+    scanSteps: ['Checking Speed...', 'Checking Meta Tags...', 'Analyzing Mobile Responsiveness...', 'Generating Report...'],
+    resultTitle: 'Quick Audit Results',
+    resultDesc: 'This is a brief summary of your website performance. For a detailed report and strategic action plan, contact our team.',
+    metrics: {
+      performance: 'Performance & Speed',
+      seo: 'Basic SEO',
+      mobile: 'Mobile Friendly',
+      security: 'Security (SSL)',
+    },
+    ctaTitle: 'Want a Detailed Report & Action Plan?',
+    ctaDesc: 'Our expert team is ready to deep-dive into your website and build a proven SEO strategy to increase your traffic.',
+    ctaBtn: 'Get Our Services',
+  },
 }
 
 export default en

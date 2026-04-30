@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import FreeAuditBanner from './components/FreeAuditBanner'
 import Services from './components/Services'
 import About from './components/About'
 import Portfolio from './components/Portfolio'
@@ -24,6 +25,8 @@ const ArticleSoftware = lazy(() => import('./pages/ArticleSoftware'))
 const ArticleGBP = lazy(() => import('./pages/ArticleGBP'))
 const ArticleSEOvsAds = lazy(() => import('./pages/ArticleSEOvsAds'))
 const ArticleHargaSEO = lazy(() => import('./pages/ArticleHargaSEO'))
+
+const FreeSEOAudit = lazy(() => import('./pages/FreeSEOAudit'))
 
 const HOME_TITLE = 'NataSEO® — Web Engine · SEO · Content Writing · Software Solution'
 const HOME_DESC = 'NataSEO adalah digital agency berbasis di Yogyakarta, Indonesia. Kami membantu bisnis berkembang secara online melalui web development, SEO, content writing, dan software solution.'
@@ -49,6 +52,7 @@ function HomePage() {
       </Helmet>
       <Navbar />
       <Hero />
+      <FreeAuditBanner />
       <Services />
       <TechStack />
       <About />
@@ -78,6 +82,7 @@ export default function App() {
     <Suspense fallback={<ArticleFallback />}>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/free-seo-audit" element={<FreeSEOAudit />} />
         <Route path="/artikel/jasa-seo-yogyakarta" element={<ArticleSEO />} />
         <Route path="/artikel/jasa-pembuatan-website-yogyakarta" element={<ArticleWeb />} />
         <Route path="/artikel/strategi-content-marketing-bisnis-indonesia" element={<ArticleContent />} />

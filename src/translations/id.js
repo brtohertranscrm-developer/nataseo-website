@@ -436,6 +436,30 @@ const id = {
   article: {
     backBtn: 'Kembali ke Beranda',
   },
+
+  // SEO Audit Page
+  audit: {
+    title: 'Quick Audit SEO Gratis',
+    subtitle: 'Cek kesehatan website Anda dalam hitungan detik',
+    desc: 'Masukkan URL website Anda dan dapatkan gambaran singkat tentang performa SEO, kecepatan, dan keamanan website Anda.',
+    urlPlaceholder: 'https://website-anda.com',
+    namePlaceholder: 'Nama Anda',
+    whatsappPlaceholder: 'Nomor WhatsApp Anda',
+    submitBtn: 'Mulai Audit Sekarang',
+    scanning: 'Sedang Menganalisis Website...',
+    scanSteps: ['Memeriksa Kecepatan...', 'Mengecek Meta Tags...', 'Menganalisis Mobile Responsiveness...', 'Menyusun Laporan...'],
+    resultTitle: 'Hasil Quick Audit',
+    resultDesc: 'Ini adalah hasil ringkas dari performa website Anda. Untuk laporan mendetail dan langkah perbaikan strategis, hubungi tim kami.',
+    metrics: {
+      performance: 'Performa & Kecepatan',
+      seo: 'SEO Dasar',
+      mobile: 'Mobile Friendly',
+      security: 'Keamanan (SSL)',
+    },
+    ctaTitle: 'Ingin Laporan Mendetail & Strategi Perbaikan?',
+    ctaDesc: 'Tim ahli kami siap membedah website Anda lebih dalam dan menyusun strategi SEO yang terbukti meningkatkan traffic.',
+    ctaBtn: 'Ambil Layanan Kami',
+  },
 }
 
 export default id
