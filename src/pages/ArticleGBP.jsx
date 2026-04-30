@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
 import RelatedArticles from '../components/RelatedArticles'
+import Breadcrumb from '../components/Breadcrumb'
 
 const TITLE = 'Cara Daftar Google Business Profile untuk Bisnis Lokal Indonesia | NataSEO'
 const DESC = 'Google Business Profile adalah tool SEO lokal paling powerful — dan gratis. Panduan lengkap cara daftar dan optimasi GBP agar bisnis Anda muncul di Google Maps dan pencarian lokal.'
@@ -64,6 +65,7 @@ export default function ArticleGBP() {
       </header>
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
+        <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Google Business Profile' }]} />
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-teal-50 text-teal-600 rounded-full text-xs font-semibold">
             <Tag size={11} /> SEO Lokal

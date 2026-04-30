@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
 import RelatedArticles from '../components/RelatedArticles'
+import Breadcrumb from '../components/Breadcrumb'
 
 const TITLE = 'Strategi Content Marketing yang Efektif untuk Bisnis di Indonesia | NataSEO'
 const DESC = 'Content marketing yang tepat bisa menjadi mesin penghasil pelanggan terbaik tanpa biaya iklan yang membengkak. Pelajari strategi content marketing efektif untuk bisnis Indonesia di sini.'
@@ -66,6 +67,7 @@ export default function ArticleContent() {
       </header>
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
+        <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Content Marketing' }]} />
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-teal-50 text-teal-600 rounded-full text-xs font-semibold">
             <Tag size={11} /> Content Marketing

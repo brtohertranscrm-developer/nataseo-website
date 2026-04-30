@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
 import RelatedArticles from '../components/RelatedArticles'
+import Breadcrumb from '../components/Breadcrumb'
 
 const TITLE = 'Jasa Pembuatan Website Yogyakarta: Website Profesional untuk Bisnis Anda | NataSEO'
 const DESC = 'Di era digital, website profesional adalah investasi terpenting. Jasa pembuatan website Yogyakarta dari NataSEO hadir untuk membantu bisnis Anda tampil online dan menghasilkan pelanggan baru.'
@@ -66,6 +67,7 @@ export default function ArticleWeb() {
       </header>
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
+        <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Jasa Pembuatan Website' }]} />
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gold-50 text-gold-600 rounded-full text-xs font-semibold">
             <Tag size={11} /> Web Engine

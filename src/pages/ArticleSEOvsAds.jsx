@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
 import RelatedArticles from '../components/RelatedArticles'
+import Breadcrumb from '../components/Breadcrumb'
 
 const TITLE = 'SEO vs Google Ads: Mana yang Lebih Baik untuk Bisnis Anda? | NataSEO'
 const DESC = 'SEO atau Google Ads? Perbandingan lengkap biaya, kecepatan hasil, dan ROI jangka panjang. Temukan strategi mana yang paling tepat untuk situasi bisnis Anda saat ini.'
@@ -90,6 +91,7 @@ export default function ArticleSEOvsAds() {
       </header>
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
+        <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'SEO vs Google Ads' }]} />
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-teal-50 text-teal-600 rounded-full text-xs font-semibold">
             <Tag size={11} /> SEO

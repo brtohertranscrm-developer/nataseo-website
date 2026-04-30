@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
 import RelatedArticles from '../components/RelatedArticles'
+import Breadcrumb from '../components/Breadcrumb'
 
 const TITLE = 'Jasa Software Development Yogyakarta: Solusi Sistem Custom untuk Bisnis Anda | NataSEO'
 const DESC = 'Proses bisnis yang manual menghambat pertumbuhan? Jasa software development Yogyakarta dari NataSEO membangun sistem custom yang benar-benar sesuai kebutuhan bisnis Anda.'
@@ -64,6 +65,7 @@ export default function ArticleSoftware() {
       </header>
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
+        <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Software Development' }]} />
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-teal-50 text-teal-600 rounded-full text-xs font-semibold">
             <Tag size={11} /> Software
