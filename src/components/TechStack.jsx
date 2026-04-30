@@ -272,10 +272,10 @@ export default function TechStack() {
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-dark-800 mb-4">
             Tools & Technologies{' '}
-            <span className="text-gradient-teal">Kami Gunakan</span>
+            <span className="text-gradient-teal">We Use</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
-            Kami menggunakan teknologi modern dan terpercaya untuk membangun produk digital yang cepat, scalable, dan SEO-ready.
+            We use modern and reliable technologies to build fast, scalable, and SEO-ready digital products.
           </p>
         </div>
 
