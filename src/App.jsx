@@ -13,6 +13,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Blog from './components/Blog'
 import TechStack from './components/TechStack'
+import Pricing from './components/Pricing'
 import WhatsAppButton from './components/WhatsAppButton'
 
 const ArticleSEO = lazy(() => import('./pages/ArticleSEO'))
@@ -53,6 +54,7 @@ function HomePage() {
       <Portfolio />
       <Process />
       <Testimonials />
+      <Pricing />
       <Blog />
       <Contact />
       <Footer />

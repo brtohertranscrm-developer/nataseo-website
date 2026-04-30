@@ -12,6 +12,7 @@ const navHrefs = [
   { key: 'portfolio', href: '#portfolio' },
   { key: 'process', href: '#process' },
   { key: 'testimonials', href: '#testimonials' },
+  { key: 'pricing', href: '#pricing' },
 ]
 
 export default function Navbar() {

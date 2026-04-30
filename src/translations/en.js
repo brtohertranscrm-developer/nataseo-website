@@ -7,6 +7,7 @@ const en = {
     portfolio: 'Portfolio',
     process: 'Process',
     testimonials: 'Why Us',
+    pricing: 'Pricing',
     cta: 'Free Consultation',
   },
 
@@ -240,6 +241,87 @@ const en = {
     officeLabel: 'Office',
   },
 
+  // Pricing
+  pricing: {
+    badge: 'Digital Investment',
+    h2a: 'Transparent Pricing,',
+    h2b: 'No Surprises',
+    desc: 'All prices are initial estimates. Every project is discussed first and tailored to your specific business needs.',
+    startingFrom: 'Starting from',
+    perMonth: '/ month',
+    perArticle: '/ article',
+    oneTime: 'one-time',
+    retainer: 'monthly retainer',
+    minContract: 'Min. 3 months',
+    ctaLabel: 'Need a more accurate estimate?',
+    ctaDesc: 'Contact us for a free consultation — we\'ll create a proposal tailored to your project scope.',
+    ctaBtn: 'Get a Free Estimate',
+    customLabel: 'Custom',
+    customNote: 'Price determined after consultation',
+    services: [
+      {
+        name: 'Web Engine',
+        tagline: 'Professional Website',
+        startPrice: 'IDR 3M',
+        unit: 'one-time',
+        range: 'IDR 3M – IDR 60M',
+        highlight: false,
+        features: [
+          'Landing Page from IDR 3–7M',
+          'Company Profile IDR 7–15M',
+          'Website + CMS IDR 12–25M',
+          'E-commerce / Web App IDR 25–60M',
+        ],
+        note: 'Price depends on number of pages, features, and design complexity',
+      },
+      {
+        name: 'SEO',
+        tagline: 'Search Engine Optimization',
+        startPrice: 'IDR 1.5M',
+        unit: '/ month',
+        range: 'IDR 1.5M – IDR 12M/month',
+        highlight: true,
+        features: [
+          'Basic (1–3 keywords) IDR 1.5–3M/mo',
+          'Standard (5–10 keywords) IDR 3–6M/mo',
+          'Full / E-commerce IDR 6–12M/mo',
+          'Weekly performance reports',
+        ],
+        note: 'Minimum 3-month contract for measurable results',
+      },
+      {
+        name: 'Content Writing',
+        tagline: 'Quality Content',
+        startPrice: 'IDR 200K',
+        unit: '/ article',
+        range: 'IDR 200K – IDR 5M/package',
+        highlight: false,
+        features: [
+          'SEO article 800–1500 words IDR 200–400K',
+          'Long-form 2000+ words IDR 400–700K',
+          '8 articles/month package IDR 1.5–3M',
+          '16 articles/month package IDR 2.5–5M',
+        ],
+        note: 'Includes keyword research and on-page optimization',
+      },
+      {
+        name: 'Software Solution',
+        tagline: 'Custom Development',
+        startPrice: 'IDR 8M',
+        unit: 'one-time',
+        range: 'IDR 8M – IDR 150M+',
+        highlight: false,
+        features: [
+          'Internal tools / Dashboard IDR 8–20M',
+          'Full web app IDR 20–50M',
+          'Management system / ERP IDR 50–150M',
+          'Mobile App (iOS & Android) IDR 30–80M',
+        ],
+        note: 'Final price after requirements analysis and project scope',
+      },
+    ],
+  },
+
   // Footer
   footer: {
     desc: 'A digital agency based in Yogyakarta helping Indonesian businesses grow online through SEO, web development, content, and software.',
@@ -251,6 +333,7 @@ const en = {
       { label: 'Our Work', href: '#portfolio' },
       { label: 'Process', href: '#process' },
       { label: 'Why Us', href: '#testimonials' },
+      { label: 'Pricing', href: '#pricing' },
       { label: 'Contact', href: '#contact' },
     ],
     resources: [

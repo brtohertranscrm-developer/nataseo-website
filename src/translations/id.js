@@ -7,6 +7,7 @@ const id = {
     portfolio: 'Portofolio',
     process: 'Proses',
     testimonials: 'Mengapa Kami',
+    pricing: 'Harga',
     cta: 'Konsultasi Gratis',
   },
 
@@ -240,6 +241,87 @@ const id = {
     officeLabel: 'Kantor',
   },
 
+  // Pricing
+  pricing: {
+    badge: 'Investasi Digital',
+    h2a: 'Harga Transparan,',
+    h2b: 'Tanpa Kejutan',
+    desc: 'Semua harga adalah estimasi awal. Setiap project dikonsultasikan terlebih dahulu dan disesuaikan dengan kebutuhan spesifik bisnis Anda.',
+    startingFrom: 'Mulai dari',
+    perMonth: '/ bulan',
+    perArticle: '/ artikel',
+    oneTime: 'satu kali bayar',
+    retainer: 'retainer bulanan',
+    minContract: 'Min. 3 bulan',
+    ctaLabel: 'Butuh estimasi lebih akurat?',
+    ctaDesc: 'Hubungi kami untuk konsultasi gratis — kami akan buat proposal sesuai scope project Anda.',
+    ctaBtn: 'Dapatkan Estimasi Gratis',
+    customLabel: 'Custom',
+    customNote: 'Harga disesuaikan setelah konsultasi',
+    services: [
+      {
+        name: 'Web Engine',
+        tagline: 'Website Profesional',
+        startPrice: 'Rp 3 juta',
+        unit: 'satu kali bayar',
+        range: 'Rp 3 juta – Rp 60 juta',
+        highlight: false,
+        features: [
+          'Landing Page mulai Rp 3–7 juta',
+          'Company Profile Rp 7–15 juta',
+          'Website + CMS Rp 12–25 juta',
+          'E-commerce / Web App Rp 25–60 juta',
+        ],
+        note: 'Harga tergantung jumlah halaman, fitur, dan kompleksitas desain',
+      },
+      {
+        name: 'SEO',
+        tagline: 'Optimasi Mesin Pencari',
+        startPrice: 'Rp 1,5 juta',
+        unit: '/ bulan',
+        range: 'Rp 1,5 juta – Rp 12 juta/bulan',
+        highlight: true,
+        features: [
+          'Basic (1–3 keyword) Rp 1,5–3 juta/bln',
+          'Standard (5–10 keyword) Rp 3–6 juta/bln',
+          'Full / E-commerce Rp 6–12 juta/bln',
+          'Laporan performa setiap minggu',
+        ],
+        note: 'Minimal kontrak 3 bulan untuk hasil yang terukur',
+      },
+      {
+        name: 'Content Writing',
+        tagline: 'Konten Berkualitas',
+        startPrice: 'Rp 200 ribu',
+        unit: '/ artikel',
+        range: 'Rp 200 ribu – Rp 5 juta/paket',
+        highlight: false,
+        features: [
+          'Artikel SEO 800–1500 kata Rp 200–400 rb',
+          'Artikel panjang 2000+ kata Rp 400–700 rb',
+          'Paket 8 artikel/bulan Rp 1,5–3 juta',
+          'Paket 16 artikel/bulan Rp 2,5–5 juta',
+        ],
+        note: 'Termasuk riset keyword dan optimasi on-page',
+      },
+      {
+        name: 'Software Solution',
+        tagline: 'Pengembangan Custom',
+        startPrice: 'Rp 8 juta',
+        unit: 'satu kali bayar',
+        range: 'Rp 8 juta – Rp 150 juta+',
+        highlight: false,
+        features: [
+          'Internal tools / Dashboard Rp 8–20 juta',
+          'Web app lengkap Rp 20–50 juta',
+          'Sistem manajemen / ERP Rp 50–150 juta',
+          'Mobile App (iOS & Android) Rp 30–80 juta',
+        ],
+        note: 'Harga final setelah analisis kebutuhan dan scope project',
+      },
+    ],
+  },
+
   // Footer
   footer: {
     desc: 'Digital agency berbasis di Yogyakarta yang membantu bisnis Indonesia tumbuh secara online melalui SEO, web development, konten, dan software.',
@@ -251,6 +333,7 @@ const id = {
       { label: 'Hasil Kerja', href: '#portfolio' },
       { label: 'Proses', href: '#process' },
       { label: 'Mengapa Kami', href: '#testimonials' },
+      { label: 'Harga', href: '#pricing' },
       { label: 'Kontak', href: '#contact' },
     ],
     resources: [
