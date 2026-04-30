@@ -14,6 +14,7 @@ import Footer from './components/Footer'
 import Blog from './components/Blog'
 import TechStack from './components/TechStack'
 import Pricing from './components/Pricing'
+import FAQ from './components/FAQ'
 import WhatsAppButton from './components/WhatsAppButton'
 
 const ArticleSEO = lazy(() => import('./pages/ArticleSEO'))
@@ -56,6 +57,7 @@ function HomePage() {
       <Testimonials />
       <Pricing />
       <Blog />
+      <FAQ />
       <Contact />
       <Footer />
       <WhatsAppButton />

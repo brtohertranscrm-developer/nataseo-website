@@ -227,6 +227,55 @@ const id = {
     nudge: 'Konsultasi gratis · Tanpa kewajiban · Respon dalam 24 jam',
   },
 
+  // FAQ
+  faq: {
+    badge: 'FAQ',
+    h2a: 'Pertanyaan yang',
+    h2b: 'Sering Ditanyakan',
+    desc: 'Semua yang perlu Anda tahu sebelum memulai. Tidak ada pertanyaan yang terlalu kecil.',
+    stillQuestion: 'Masih ada pertanyaan?',
+    stillDesc: 'Konsultasi langsung lebih cepat dari membaca FAQ. Kami balas dalam 24 jam.',
+    stillBtn: 'Tanya Langsung',
+    items: [
+      {
+        q: 'Berapa lama proses pembuatan website?',
+        a: 'Tergantung kompleksitas project. Landing page sederhana bisa selesai dalam 3–5 hari kerja. Company profile 5–10 halaman biasanya 1–2 minggu. Website dengan fitur custom (e-commerce, booking system) berkisar 3–6 minggu. Kami selalu sepakati timeline di awal sebelum mulai.',
+      },
+      {
+        q: 'Apakah ada garansi atau revisi setelah selesai?',
+        a: 'Ya. Setiap project termasuk revisi unlimited selama proses pengerjaan sampai Anda puas. Setelah launch, kami memberikan masa garansi bug-fix tanpa biaya. Perubahan besar di luar scope original akan didiskusikan dan dihitung terpisah.',
+      },
+      {
+        q: 'Berapa lama SEO mulai terlihat hasilnya?',
+        a: 'Jujur: SEO butuh waktu. Pergerakan ranking biasanya mulai terlihat di bulan ke-2 hingga ke-3. Hasil signifikan (masuk halaman 1 untuk keyword target) umumnya dicapai dalam 4–6 bulan untuk keyword medium-competition. Itulah kenapa kami minta minimal kontrak 3 bulan.',
+      },
+      {
+        q: 'Apakah ada jaminan ranking halaman 1 Google?',
+        a: 'Tidak ada yang bisa menjamin ranking — siapapun yang bilang bisa jamin ranking halaman 1 dalam waktu singkat, itu tanda bahaya. Yang kami jamin adalah proses yang benar: riset keyword akurat, teknikal SEO solid, konten berkualitas, dan laporan performa transparan setiap minggu.',
+      },
+      {
+        q: 'Bagaimana sistem pembayarannya?',
+        a: 'Untuk Web Engine dan Software: 50% di awal sebagai tanda jadi, 50% setelah project selesai dan disetujui. Untuk SEO dan Content Writing: dibayar di awal setiap bulan. Kami menerima transfer bank, dan bisa dinegosiasikan untuk project besar.',
+      },
+      {
+        q: 'Apakah ada kontrak? Seberapa mengikat?',
+        a: 'Ya, kami menggunakan perjanjian kerja sederhana (bukan kontrak tebal). Isinya: scope pekerjaan, timeline, harga, dan hak masing-masing pihak. Ini melindungi Anda dan kami. Sebelum kontrak ditandatangani, ada proposal detail yang bisa Anda review dulu.',
+      },
+      {
+        q: 'Website saya akan di-hosting di mana?',
+        a: 'Kami menggunakan hosting modern yang cepat dan andal — Vercel untuk website statis/React, dan VPS atau shared hosting untuk website WordPress/PHP. Domain dan hosting bisa atas nama Anda sendiri sehingga Anda memiliki penuh setelah project selesai.',
+      },
+      {
+        q: 'Apakah NataSEO bisa handle semua layanan sekaligus?',
+        a: 'Bisa. Bahkan ini yang kami rekomendasikan — website yang bagus + konten SEO + strategi SEO yang terintegrasi jauh lebih efektif daripada dikerjakan terpisah oleh vendor berbeda. Kami bisa buat paket bundling yang lebih efisien untuk multi-layanan.',
+      },
+      {
+        q: 'Bagaimana cara mulai bekerja sama dengan NataSEO?',
+        a: 'Mudah. Hubungi kami via form di bawah atau WhatsApp — kami akan jadwalkan sesi konsultasi 30 menit (gratis, tanpa kewajiban). Di sesi itu kami pelajari kebutuhan Anda, lalu kirimkan proposal dalam 1–2 hari kerja. Tidak ada pressure untuk langsung deal.',
+      },
+    ],
+  },
+
   // Blog
   blog: {
     badge: 'Insight & Tips',

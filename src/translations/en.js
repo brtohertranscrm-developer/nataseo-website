@@ -227,6 +227,55 @@ const en = {
     nudge: 'Free consultation · No obligation · Response within 24 hours',
   },
 
+  // FAQ
+  faq: {
+    badge: 'FAQ',
+    h2a: 'Questions We',
+    h2b: 'Get Asked Most',
+    desc: 'Everything you need to know before getting started. No question is too small.',
+    stillQuestion: 'Still have questions?',
+    stillDesc: 'A direct consultation is faster than reading FAQs. We reply within 24 hours.',
+    stillBtn: 'Ask Us Directly',
+    items: [
+      {
+        q: 'How long does it take to build a website?',
+        a: 'It depends on project complexity. A simple landing page can be done in 3–5 business days. A 5–10 page company profile usually takes 1–2 weeks. Websites with custom features (e-commerce, booking systems) typically take 3–6 weeks. We always agree on a timeline upfront before starting.',
+      },
+      {
+        q: 'Are there any guarantees or revisions after completion?',
+        a: 'Yes. Every project includes unlimited revisions during development until you\'re satisfied. After launch, we provide a bug-fix warranty period at no extra cost. Major changes outside the original scope will be discussed and quoted separately.',
+      },
+      {
+        q: 'How long before SEO results are visible?',
+        a: 'Honestly: SEO takes time. Ranking movement usually starts appearing in months 2–3. Significant results (reaching page 1 for target keywords) are typically achieved within 4–6 months for medium-competition keywords. That\'s why we require a minimum 3-month contract.',
+      },
+      {
+        q: 'Can you guarantee page 1 rankings on Google?',
+        a: 'No one can guarantee rankings — anyone promising page 1 rankings in a short time is a red flag. What we guarantee is the right process: accurate keyword research, solid technical SEO, quality content, and transparent weekly performance reports.',
+      },
+      {
+        q: 'How does payment work?',
+        a: 'For Web Engine and Software: 50% upfront as a deposit, 50% after the project is completed and approved. For SEO and Content Writing: paid monthly in advance. We accept bank transfers and can negotiate for larger projects.',
+      },
+      {
+        q: 'Is there a contract? How binding is it?',
+        a: 'Yes, we use a simple work agreement (not a thick contract). It covers: scope of work, timeline, pricing, and rights of both parties. This protects you and us. Before signing, you\'ll receive a detailed proposal to review at your own pace.',
+      },
+      {
+        q: 'Where will my website be hosted?',
+        a: 'We use modern, fast, and reliable hosting — Vercel for static/React websites, and VPS or shared hosting for WordPress/PHP sites. Domain and hosting can be registered under your own name so you have full ownership after the project.',
+      },
+      {
+        q: 'Can NataSEO handle multiple services at once?',
+        a: 'Absolutely — and we recommend it. A great website + SEO content + integrated SEO strategy is far more effective than working with separate vendors. We can put together a bundled package that\'s more efficient for multi-service projects.',
+      },
+      {
+        q: 'How do I get started with NataSEO?',
+        a: 'Easy. Contact us via the form below or WhatsApp — we\'ll schedule a free 30-minute consultation (no obligation). In that session we learn your needs, then send a proposal within 1–2 business days. No pressure to commit right away.',
+      },
+    ],
+  },
+
   // Blog
   blog: {
     badge: 'Insights & Tips',
