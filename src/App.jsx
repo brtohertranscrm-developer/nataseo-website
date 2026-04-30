@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -21,9 +22,28 @@ const ArticleGBP = lazy(() => import('./pages/ArticleGBP'))
 const ArticleSEOvsAds = lazy(() => import('./pages/ArticleSEOvsAds'))
 const ArticleHargaSEO = lazy(() => import('./pages/ArticleHargaSEO'))
 
+const HOME_TITLE = 'NataSEO® — Web Engine · SEO · Content Writing · Software Solution'
+const HOME_DESC = 'NataSEO adalah digital agency berbasis di Yogyakarta, Indonesia. Kami membantu bisnis berkembang secara online melalui web development, SEO, content writing, dan software solution.'
+const HOME_URL = 'https://nataseo.asia'
+
 function HomePage() {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>{HOME_TITLE}</title>
+        <meta name="description" content={HOME_DESC} />
+        <link rel="canonical" href={HOME_URL} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={HOME_TITLE} />
+        <meta property="og:description" content={HOME_DESC} />
+        <meta property="og:url" content={HOME_URL} />
+        <meta property="og:image" content="https://nataseo.asia/og-image.png" />
+        <meta property="og:locale" content="id_ID" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={HOME_TITLE} />
+        <meta name="twitter:description" content={HOME_DESC} />
+        <meta name="twitter:image" content="https://nataseo.asia/og-image.png" />
+      </Helmet>
       <Navbar />
       <Hero />
       <Services />
