@@ -37,12 +37,12 @@ function HomePage() {
         <meta property="og:title" content={HOME_TITLE} />
         <meta property="og:description" content={HOME_DESC} />
         <meta property="og:url" content={HOME_URL} />
-        <meta property="og:image" content="https://nataseo.asia/og-image.png" />
+        <meta property="og:image" content="https://nataseo.asia/og-image.webp" />
         <meta property="og:locale" content="id_ID" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={HOME_TITLE} />
         <meta name="twitter:description" content={HOME_DESC} />
-        <meta name="twitter:image" content="https://nataseo.asia/og-image.png" />
+        <meta name="twitter:image" content="https://nataseo.asia/og-image.webp" />
       </Helmet>
       <Navbar />
       <Hero />
