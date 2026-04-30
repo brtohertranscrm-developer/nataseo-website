@@ -1,20 +1,25 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Logo from './Logo'
+import { useLanguage } from '../contexts/LanguageContext'
+import id from '../translations/id'
+import en from '../translations/en'
 
-const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'About', href: '#about' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Process', href: '#process' },
-  { label: 'Testimonials', href: '#testimonials' },
+const navHrefs = [
+  { key: 'home', href: '#home' },
+  { key: 'services', href: '#services' },
+  { key: 'about', href: '#about' },
+  { key: 'portfolio', href: '#portfolio' },
+  { key: 'process', href: '#process' },
+  { key: 'testimonials', href: '#testimonials' },
 ]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('home')
+  const { lang, toggle } = useLanguage()
+  const t = lang === 'id' ? id : en
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -46,7 +51,7 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map(link => (
+            {navHrefs.map(link => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
@@ -58,18 +63,29 @@ export default function Navbar() {
                     : 'text-white/90 hover:text-white hover:bg-white/10'
                 }`}
               >
-                {link.label}
+                {t.nav[link.key]}
               </button>
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA + lang toggle */}
           <div className="hidden md:flex items-center gap-3">
+            {/* Language toggle */}
+            <button
+              onClick={toggle}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all duration-200 ${
+                scrolled
+                  ? 'border-gray-200 text-dark-800 hover:border-teal-400 hover:text-teal-600'
+                  : 'border-white/30 text-white hover:border-white hover:bg-white/10'
+              }`}
+            >
+              {lang === 'id' ? 'EN' : 'ID'}
+            </button>
             <button
               onClick={() => scrollTo('#contact')}
               className="px-5 py-2.5 bg-teal-500 hover:bg-teal-600 text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-teal-500/30 hover:shadow-teal-500/50 hover:scale-105"
             >
-              Get Free Consultation
+              {t.nav.cta}
             </button>
           </div>
 
@@ -92,21 +108,29 @@ export default function Navbar() {
         }`}
       >
         <div className="bg-white border-t border-gray-100 px-4 py-4 shadow-xl">
-          {navLinks.map(link => (
+          {navHrefs.map(link => (
             <button
               key={link.href}
               onClick={() => scrollTo(link.href)}
               className="block w-full text-left px-4 py-3 text-dark-800 hover:text-teal-500 hover:bg-teal-50 rounded-lg text-sm font-medium transition-colors"
             >
-              {link.label}
+              {t.nav[link.key]}
             </button>
           ))}
-          <button
-            onClick={() => scrollTo('#contact')}
-            className="mt-3 w-full py-3 bg-teal-500 hover:bg-teal-600 text-white text-sm font-semibold rounded-xl transition-colors"
-          >
-            Get Free Consultation
-          </button>
+          <div className="flex gap-3 mt-3">
+            <button
+              onClick={toggle}
+              className="flex-shrink-0 px-4 py-3 border border-gray-200 text-dark-800 text-sm font-bold rounded-xl transition-colors hover:border-teal-400 hover:text-teal-600"
+            >
+              {lang === 'id' ? 'EN' : 'ID'}
+            </button>
+            <button
+              onClick={() => scrollTo('#contact')}
+              className="flex-1 py-3 bg-teal-500 hover:bg-teal-600 text-white text-sm font-semibold rounded-xl transition-colors"
+            >
+              {t.nav.cta}
+            </button>
+          </div>
         </div>
       </div>
     </header>

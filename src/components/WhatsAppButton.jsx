@@ -1,9 +1,17 @@
-const WA_URL = 'https://wa.me/6285159966646?text=Halo%20NataSEO%2C%20saya%20ingin%20konsultasi%20project%20saya'
+import { useLanguage } from '../contexts/LanguageContext'
+import id from '../translations/id'
+import en from '../translations/en'
+
+const BASE_URL = 'https://wa.me/6285159966646?text='
 
 export default function WhatsAppButton() {
+  const { lang } = useLanguage()
+  const t = lang === 'id' ? id : en
+  const waUrl = BASE_URL + t.whatsapp.message
+
   return (
     <a
-      href={WA_URL}
+      href={waUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat via WhatsApp"
@@ -11,7 +19,7 @@ export default function WhatsAppButton() {
     >
       {/* Tooltip */}
       <span className="opacity-0 group-hover:opacity-100 transition-all duration-200 translate-x-2 group-hover:translate-x-0 bg-dark-800 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg whitespace-nowrap pointer-events-none">
-        Chat WhatsApp
+        {t.whatsapp.tooltip}
       </span>
 
       {/* Button */}

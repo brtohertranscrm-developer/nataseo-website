@@ -1,10 +1,14 @@
 import { useEffect, useRef } from 'react'
-import { ArrowRight, Play, TrendingUp, Search, FileText, Code2 } from 'lucide-react'
+import { ArrowRight, Play, TrendingUp, Search, Code2 } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
+import id from '../translations/id'
+import en from '../translations/en'
 
-const floatingCards = [
-  { icon: TrendingUp, label: 'SEO Ready', value: 'On-Page & Off', color: 'text-teal-500', bg: 'bg-teal-50' },
-  { icon: Search, label: 'Google Focused', value: 'Rank Higher', color: 'text-gold-500', bg: 'bg-gold-50' },
-  { icon: Code2, label: 'Open for Projects', value: 'Start Now', color: 'text-teal-500', bg: 'bg-teal-50' },
+const floatingIcons = [TrendingUp, Search, Code2]
+const floatingColors = [
+  { color: 'text-teal-500', bg: 'bg-teal-50' },
+  { color: 'text-gold-500', bg: 'bg-gold-50' },
+  { color: 'text-teal-500', bg: 'bg-teal-50' },
 ]
 
 function NodeCanvas() {
@@ -83,7 +87,8 @@ function NodeCanvas() {
 }
 
 export default function Hero() {
-  const statsRef = useRef([])
+  const { lang } = useLanguage()
+  const t = lang === 'id' ? id : en
 
   useEffect(() => {
     const targets = [
@@ -113,15 +118,12 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden bg-mesh"
     >
-      {/* Node network animation */}
       <NodeCanvas />
 
-      {/* Decorative circles */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-gold-500/8 rounded-full blur-3xl" />
       <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-teal-400/5 rounded-full blur-2xl" />
 
-      {/* Grid pattern overlay */}
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -134,32 +136,28 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text */}
           <div>
-            {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-teal-500/15 border border-teal-500/30 rounded-full px-4 py-1.5 mb-6">
               <span className="w-2 h-2 bg-teal-400 rounded-full animate-pulse" />
-              <span className="text-teal-300 text-sm font-medium">Fresh Agency, Real Commitment</span>
+              <span className="text-teal-300 text-sm font-medium">{t.hero.badge}</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              Grow Your Business{' '}
-              <span className="text-gradient-teal">Digitally</span>{' '}
-              with{' '}
+              {t.hero.h1a}{' '}
+              <span className="text-gradient-teal">{t.hero.h1b}</span>{' '}
+              {t.hero.h1c}{' '}
               <span className="text-gradient-gold">NataSEO</span>
             </h1>
 
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-              We help businesses dominate search engines, build stunning websites,
-              create compelling content, and develop powerful software solutions.
-              Your digital success starts here.
+              {t.hero.desc}
             </p>
 
-            {/* CTA buttons */}
             <div className="flex flex-wrap gap-4 mb-12">
               <button
                 onClick={scrollToContact}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-teal-500 hover:bg-teal-400 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-teal-500/30 hover:shadow-teal-400/50 hover:scale-105"
               >
-                Start Your Project
+                {t.hero.cta1}
                 <ArrowRight size={18} />
               </button>
               <button
@@ -167,34 +165,31 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/15 text-white font-semibold rounded-xl border border-white/20 transition-all duration-200 backdrop-blur-sm"
               >
                 <Play size={16} className="fill-white" />
-                Explore Services
+                {t.hero.cta2}
               </button>
             </div>
 
-            {/* Stats row */}
             <div className="flex flex-wrap gap-8">
               <div>
                 <div className="text-3xl font-bold text-white" id="stat-1">0</div>
-                <div className="text-gray-400 text-sm mt-1">Services Ready</div>
+                <div className="text-gray-400 text-sm mt-1">{t.hero.stat1}</div>
               </div>
               <div className="w-px bg-white/10" />
               <div>
                 <div className="text-3xl font-bold text-white" id="stat-2">0%</div>
-                <div className="text-gray-400 text-sm mt-1">Full Commitment</div>
+                <div className="text-gray-400 text-sm mt-1">{t.hero.stat2}</div>
               </div>
               <div className="w-px bg-white/10" />
               <div>
                 <div className="text-3xl font-bold text-white" id="stat-3">0h</div>
-                <div className="text-gray-400 text-sm mt-1">Response Time</div>
+                <div className="text-gray-400 text-sm mt-1">{t.hero.stat3}</div>
               </div>
             </div>
           </div>
 
           {/* Right: Visual cards */}
           <div className="hidden lg:block relative">
-            {/* Main card */}
             <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 ml-8">
-              {/* Dashboard mockup */}
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-3 h-3 rounded-full bg-red-400" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400" />
@@ -202,9 +197,8 @@ export default function Hero() {
                 <div className="flex-1 bg-white/10 rounded-full h-5 ml-2" />
               </div>
 
-              {/* Chart bars */}
               <div className="mb-6">
-                <div className="text-white/60 text-xs mb-3 font-medium">ORGANIC TRAFFIC GROWTH</div>
+                <div className="text-white/60 text-xs mb-3 font-medium">{t.hero.cardTraffic.toUpperCase()}</div>
                 <div className="flex items-end gap-2 h-24">
                   {[30, 45, 38, 60, 55, 75, 68, 90, 85, 100].map((h, i) => (
                     <div
@@ -215,22 +209,20 @@ export default function Hero() {
                         background: i >= 7
                           ? 'linear-gradient(to top, #0AB5A0, #5eead4)'
                           : 'rgba(255,255,255,0.15)',
-                        animationDelay: `${i * 0.1}s`,
                       }}
                     />
                   ))}
                 </div>
               </div>
 
-              {/* Metrics */}
               <div className="grid grid-cols-2 gap-3">
                 <div className="bg-white/10 rounded-xl p-3">
-                  <div className="text-teal-300 text-xs font-medium mb-1">Total Visitors</div>
+                  <div className="text-teal-300 text-xs font-medium mb-1">{t.hero.cardVisitors}</div>
                   <div className="text-white text-xl font-bold">48.2K</div>
                   <div className="text-green-400 text-xs mt-1">↑ +24.3%</div>
                 </div>
                 <div className="bg-white/10 rounded-xl p-3">
-                  <div className="text-gold-300 text-xs font-medium mb-1">Conversion Rate</div>
+                  <div className="text-gold-300 text-xs font-medium mb-1">{t.hero.cardConversion}</div>
                   <div className="text-white text-xl font-bold">6.8%</div>
                   <div className="text-green-400 text-xs mt-1">↑ +12.1%</div>
                 </div>
@@ -238,33 +230,36 @@ export default function Hero() {
             </div>
 
             {/* Floating badge cards */}
-            {floatingCards.map((card, i) => (
-              <div
-                key={i}
-                className="absolute bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 animate-float"
-                style={{
-                  top: i === 0 ? '-20px' : i === 1 ? '40%' : 'auto',
-                  bottom: i === 2 ? '-20px' : 'auto',
-                  left: i === 1 ? '-40px' : 'auto',
-                  right: i === 0 ? '20px' : i === 2 ? '30px' : 'auto',
-                  animationDelay: `${i * 0.8}s`,
-                  zIndex: 10,
-                }}
-              >
-                <div className={`w-9 h-9 ${card.bg} rounded-xl flex items-center justify-center`}>
-                  <card.icon size={18} className={card.color} />
+            {t.hero.floatingCards.map((card, i) => {
+              const Icon = floatingIcons[i]
+              const c = floatingColors[i]
+              return (
+                <div
+                  key={i}
+                  className="absolute bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 animate-float"
+                  style={{
+                    top: i === 0 ? '-20px' : i === 1 ? '40%' : 'auto',
+                    bottom: i === 2 ? '-20px' : 'auto',
+                    left: i === 1 ? '-40px' : 'auto',
+                    right: i === 0 ? '20px' : i === 2 ? '30px' : 'auto',
+                    animationDelay: `${i * 0.8}s`,
+                    zIndex: 10,
+                  }}
+                >
+                  <div className={`w-9 h-9 ${c.bg} rounded-xl flex items-center justify-center`}>
+                    <Icon size={18} className={c.color} />
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500 font-medium">{card.label}</div>
+                    <div className="text-sm font-bold text-dark-800">{card.value}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-xs text-gray-500 font-medium">{card.label}</div>
-                  <div className="text-sm font-bold text-dark-800">{card.value}</div>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
 
-      {/* Bottom wave */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="white" />

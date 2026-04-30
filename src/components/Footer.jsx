@@ -1,27 +1,15 @@
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react'
 import Logo from './Logo'
+import { useLanguage } from '../contexts/LanguageContext'
+import id from '../translations/id'
+import en from '../translations/en'
 
-const links = {
-  Services: [
-    { label: 'Web Engine', href: '#services' },
-    { label: 'SEO', href: '#services' },
-    { label: 'Content Writing', href: '#services' },
-    { label: 'Software Solution', href: '#services' },
-  ],
-  Company: [
-    { label: 'About Us', href: '#about' },
-    { label: 'Our Work', href: '#portfolio' },
-    { label: 'Process', href: '#process' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Contact', href: '#contact' },
-  ],
-  Resources: [
-    { label: 'Blog', href: '#' },
-    { label: 'Case Studies', href: '#portfolio' },
-    { label: 'SEO Checklist', href: '#' },
-    { label: 'Free Audit', href: '#contact' },
-  ],
-}
+const serviceLinks = [
+  { label: 'Web Engine', href: '#services' },
+  { label: 'SEO', href: '#services' },
+  { label: 'Content Writing', href: '#services' },
+  { label: 'Software Solution', href: '#services' },
+]
 
 const SocialIcon = ({ type }) => {
   const icons = {
@@ -57,6 +45,9 @@ const socials = [
 ]
 
 export default function Footer() {
+  const { lang } = useLanguage()
+  const t = lang === 'id' ? id : en
+
   const scrollTo = href => {
     const id = href.replace('#', '')
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -69,8 +60,14 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-xl font-bold mb-1">Stay Ahead of the Competition</h3>
-              <p className="text-gray-400 text-sm">Get weekly SEO tips, digital marketing insights, and agency news.</p>
+              <h3 className="text-xl font-bold mb-1">
+                {lang === 'id' ? 'Tetap Unggul dari Kompetitor' : 'Stay Ahead of the Competition'}
+              </h3>
+              <p className="text-gray-400 text-sm">
+                {lang === 'id'
+                  ? 'Dapatkan tips SEO mingguan, insight digital marketing, dan berita terbaru.'
+                  : 'Get weekly SEO tips, digital marketing insights, and agency news.'}
+              </p>
             </div>
             <form
               onSubmit={e => e.preventDefault()}
@@ -85,7 +82,7 @@ export default function Footer() {
                 type="submit"
                 className="px-5 py-3 bg-teal-500 hover:bg-teal-400 text-white font-semibold rounded-xl text-sm transition-colors flex items-center gap-1.5 whitespace-nowrap"
               >
-                Subscribe <ArrowRight size={14} />
+                {lang === 'id' ? 'Daftar' : 'Subscribe'} <ArrowRight size={14} />
               </button>
             </form>
           </div>
@@ -101,11 +98,9 @@ export default function Footer() {
               <Logo size="md" white />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
-              Indonesia's trusted digital agency. We help businesses grow online through
-              web, SEO, content, and software solutions.
+              {t.footer.desc}
             </p>
 
-            {/* Contact info */}
             <ul className="space-y-3 mb-6">
               {[
                 { icon: Mail, value: 'hello@pandupradana.my.id', href: 'mailto:hello@pandupradana.my.id' },
@@ -123,7 +118,6 @@ export default function Footer() {
               ))}
             </ul>
 
-            {/* Social icons */}
             <div className="flex gap-3">
               {socials.map(s => (
                 <a
@@ -138,24 +132,56 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Link groups */}
-          {Object.entries(links).map(([group, items]) => (
-            <div key={group}>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">{group}</h4>
-              <ul className="space-y-2.5">
-                {items.map(item => (
-                  <li key={item.label}>
-                    <button
-                      onClick={() => scrollTo(item.href)}
-                      className="text-gray-400 hover:text-teal-400 text-sm transition-colors text-left"
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Services */}
+          <div>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">{t.footer.servicesTitle}</h4>
+            <ul className="space-y-2.5">
+              {serviceLinks.map(item => (
+                <li key={item.label}>
+                  <button
+                    onClick={() => scrollTo(item.href)}
+                    className="text-gray-400 hover:text-teal-400 text-sm transition-colors text-left"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">{t.footer.companyTitle}</h4>
+            <ul className="space-y-2.5">
+              {t.footer.company.map(item => (
+                <li key={item.label}>
+                  <button
+                    onClick={() => scrollTo(item.href)}
+                    className="text-gray-400 hover:text-teal-400 text-sm transition-colors text-left"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">{t.footer.resourcesTitle}</h4>
+            <ul className="space-y-2.5">
+              {t.footer.resources.map(item => (
+                <li key={item.label}>
+                  <button
+                    onClick={() => scrollTo(item.href)}
+                    className="text-gray-400 hover:text-teal-400 text-sm transition-colors text-left"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -163,15 +189,11 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-500 text-xs text-center sm:text-left">
-            © {new Date().getFullYear()} NataSEO®. All rights reserved.
+            © {new Date().getFullYear()} NataSEO®. {t.footer.copyright}
           </p>
-          <div className="flex gap-5">
-            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(item => (
-              <a key={item} href="#" className="text-gray-500 hover:text-teal-400 text-xs transition-colors">
-                {item}
-              </a>
-            ))}
-          </div>
+          <p className="text-gray-500 text-xs">
+            {t.footer.madeWith} ♥ {t.footer.forBusiness}
+          </p>
         </div>
       </div>
     </footer>

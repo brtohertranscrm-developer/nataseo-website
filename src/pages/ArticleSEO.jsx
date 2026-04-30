@@ -5,6 +5,9 @@ import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
 import RelatedArticles from '../components/RelatedArticles'
 import Breadcrumb from '../components/Breadcrumb'
+import { useLanguage } from '../contexts/LanguageContext'
+import idT from '../translations/id'
+import enT from '../translations/en'
 
 const TITLE = 'Jasa SEO Yogyakarta: Cara Tingkatkan Ranking Google Bisnis Anda | NataSEO'
 const DESC = 'Bisnis sulit ditemukan di Google? Jasa SEO Yogyakarta dari NataSEO membantu Anda tampil di halaman pertama dan mendatangkan pelanggan baru secara organik — tanpa iklan berbayar.'
@@ -12,6 +15,8 @@ const URL = 'https://nataseo.asia/artikel/jasa-seo-yogyakarta'
 
 export default function ArticleSEO() {
   const navigate = useNavigate()
+  const { lang } = useLanguage()
+  const t = lang === 'id' ? idT : enT
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -85,7 +90,7 @@ export default function ArticleSEO() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <button onClick={() => navigate('/')} className="flex items-center gap-2 text-gray-500 hover:text-teal-500 transition-colors text-sm font-medium">
             <ArrowLeft size={16} />
-            Kembali ke Beranda
+            {t.article.backBtn}
           </button>
           <button onClick={() => navigate('/')}>
             <Logo size="sm" />
@@ -94,7 +99,7 @@ export default function ArticleSEO() {
       </header>
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
-        <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Jasa SEO Yogyakarta' }]} />
+        <Breadcrumb items={[{ label: t.breadcrumb.home, href: '/' }, { label: 'Jasa SEO Yogyakarta' }]} />
         {/* Meta */}
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-teal-50 text-teal-600 rounded-full text-xs font-semibold">

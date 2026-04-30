@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
+import id from '../translations/id'
+import en from '../translations/en'
 
 const ALL_ARTICLES = [
   { slug: '/artikel/jasa-seo-yogyakarta', title: 'Jasa SEO Yogyakarta: Cara Tingkatkan Ranking Google Bisnis Anda', tag: 'SEO' },
@@ -20,6 +23,8 @@ const TAG_COLORS = {
 }
 
 export default function RelatedArticles({ currentSlug }) {
+  const { lang } = useLanguage()
+  const t = lang === 'id' ? id : en
   const currentTag = ALL_ARTICLES.find(a => a.slug === currentSlug)?.tag
   const others = ALL_ARTICLES.filter(a => a.slug !== currentSlug)
 
@@ -30,7 +35,7 @@ export default function RelatedArticles({ currentSlug }) {
 
   return (
     <div className="mt-12 pt-10 border-t border-gray-100">
-      <h3 className="text-lg font-bold text-dark-800 mb-5">Artikel Terkait</h3>
+      <h3 className="text-lg font-bold text-dark-800 mb-5">{t.related.title}</h3>
       <div className="grid sm:grid-cols-3 gap-4">
         {related.map(article => (
           <Link
@@ -46,7 +51,7 @@ export default function RelatedArticles({ currentSlug }) {
               {article.title}
             </p>
             <span className="inline-flex items-center gap-1 text-xs text-teal-500 mt-2 font-medium">
-              Baca artikel <ArrowRight size={11} />
+              {t.related.readMore} <ArrowRight size={11} />
             </span>
           </Link>
         ))}

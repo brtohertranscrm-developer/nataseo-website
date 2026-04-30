@@ -5,6 +5,9 @@ import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import Logo from '../components/Logo'
 import RelatedArticles from '../components/RelatedArticles'
 import Breadcrumb from '../components/Breadcrumb'
+import { useLanguage } from '../contexts/LanguageContext'
+import idT from '../translations/id'
+import enT from '../translations/en'
 
 const TITLE = 'Berapa Biaya Jasa SEO di Indonesia? Panduan Harga 2026 | NataSEO'
 const DESC = 'Panduan lengkap harga jasa SEO di Indonesia 2026. Pelajari faktor yang mempengaruhi biaya, kisaran harga pasar, dan cara memilih paket SEO yang tepat untuk anggaran Anda.'
@@ -12,6 +15,8 @@ const URL = 'https://nataseo.asia/artikel/biaya-jasa-seo-indonesia'
 
 export default function ArticleHargaSEO() {
   const navigate = useNavigate()
+  const { lang } = useLanguage()
+  const t = lang === 'id' ? idT : enT
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -84,14 +89,14 @@ export default function ArticleHargaSEO() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <button onClick={() => navigate('/')} className="flex items-center gap-2 text-gray-500 hover:text-teal-500 transition-colors text-sm font-medium">
             <ArrowLeft size={16} />
-            Kembali ke Beranda
+            {t.article.backBtn}
           </button>
           <button onClick={() => navigate('/')}><Logo size="sm" /></button>
         </div>
       </header>
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
-        <Breadcrumb items={[{ label: 'Beranda', href: '/' }, { label: 'Biaya Jasa SEO' }]} />
+        <Breadcrumb items={[{ label: t.breadcrumb.home, href: '/' }, { label: 'Biaya Jasa SEO' }]} />
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-teal-50 text-teal-600 rounded-full text-xs font-semibold">
             <Tag size={11} /> SEO

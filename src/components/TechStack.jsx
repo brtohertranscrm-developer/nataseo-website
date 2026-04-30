@@ -1,3 +1,7 @@
+import { useLanguage } from '../contexts/LanguageContext'
+import id from '../translations/id'
+import en from '../translations/en'
+
 const categories = [
   {
     group: 'Web Technologies',
@@ -261,6 +265,9 @@ function TechIcon({ name, bg, icon }) {
 }
 
 export default function TechStack() {
+  const { lang } = useLanguage()
+  const t = lang === 'id' ? id : en
+
   return (
     <section className="py-20 bg-gray-50/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -268,14 +275,14 @@ export default function TechStack() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-100 rounded-full px-4 py-1.5 mb-4">
             <span className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
-            <span className="text-teal-600 text-sm font-semibold">Technology Stack</span>
+            <span className="text-teal-600 text-sm font-semibold">{t.techStack.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-dark-800 mb-4">
-            Tools & Technologies{' '}
-            <span className="text-gradient-teal">We Use</span>
+            {t.techStack.h2}{' '}
+            <span className="text-gradient-teal">{t.techStack.h2accent}</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
-            We use modern and reliable technologies to build fast, scalable, and SEO-ready digital products.
+            {t.techStack.desc}
           </p>
         </div>
 

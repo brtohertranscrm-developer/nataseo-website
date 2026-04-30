@@ -1,68 +1,11 @@
 import { useRef, useEffect } from 'react'
 import { Globe, Search, FileText, Code2, ArrowRight, CheckCircle } from 'lucide-react'
+import { useLanguage } from '../contexts/LanguageContext'
+import id from '../translations/id'
+import en from '../translations/en'
 
-const services = [
-  {
-    icon: Globe,
-    title: 'Web Engine',
-    subtitle: 'High-Performance Websites',
-    color: 'teal',
-    description:
-      'We build fast, responsive, and visually stunning websites that convert visitors into customers. From landing pages to complex web applications.',
-    features: [
-      'Custom UI/UX Design',
-      'Mobile-First Development',
-      'Speed & Performance Optimized',
-      'CMS Integration',
-    ],
-    badge: 'Most Popular',
-  },
-  {
-    icon: Search,
-    title: 'SEO',
-    subtitle: 'Search Engine Optimization',
-    color: 'gold',
-    description:
-      'Dominate Google search results with our data-driven SEO strategies. We get your business found by the right people at the right time.',
-    features: [
-      'Technical SEO Audit',
-      'On-Page Optimization',
-      'Link Building',
-      'Local SEO & Google Maps',
-    ],
-    badge: null,
-  },
-  {
-    icon: FileText,
-    title: 'Content Writing',
-    subtitle: 'Compelling Content Strategy',
-    color: 'teal',
-    description:
-      'Engage your audience with high-quality, SEO-optimized content that ranks on search engines and resonates with your target market.',
-    features: [
-      'Blog & Article Writing',
-      'Website Copywriting',
-      'Social Media Content',
-      'Product Descriptions',
-    ],
-    badge: null,
-  },
-  {
-    icon: Code2,
-    title: 'Software Solution',
-    subtitle: 'Custom Software Development',
-    color: 'gold',
-    description:
-      'From web apps to mobile apps and enterprise software, we build tailored digital solutions that streamline your business operations.',
-    features: [
-      'Web Application Development',
-      'Mobile App (iOS & Android)',
-      'API Integration',
-      'Cloud & DevOps Solutions',
-    ],
-    badge: null,
-  },
-]
+const serviceIcons = [Globe, Search, FileText, Code2]
+const serviceColors = ['teal', 'gold', 'teal', 'gold']
 
 const colorMap = {
   teal: {
@@ -85,6 +28,8 @@ const colorMap = {
 
 export default function Services() {
   const sectionRef = useRef(null)
+  const { lang } = useLanguage()
+  const t = lang === 'id' ? id : en
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -110,22 +55,23 @@ export default function Services() {
         <div className="text-center mb-16 animate-on-scroll">
           <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-100 rounded-full px-4 py-1.5 mb-4">
             <span className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
-            <span className="text-teal-600 text-sm font-semibold">What We Do</span>
+            <span className="text-teal-600 text-sm font-semibold">{t.services.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark-800 mb-4">
-            Services That Drive{' '}
-            <span className="text-gradient-teal">Real Results</span>
+            {t.services.h2a}{' '}
+            <span className="text-gradient-teal">{t.services.h2b}</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            We combine strategy, creativity, and technology to deliver digital solutions
-            that grow your business and outperform the competition.
+            {t.services.desc}
           </p>
         </div>
 
         {/* Cards grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((svc, i) => {
-            const c = colorMap[svc.color]
+          {t.services.items.map((svc, i) => {
+            const color = serviceColors[i]
+            const c = colorMap[color]
+            const Icon = serviceIcons[i]
             return (
               <div
                 key={i}
@@ -138,7 +84,7 @@ export default function Services() {
                 )}
 
                 <div className={`w-12 h-12 ${c.icon} rounded-2xl flex items-center justify-center mb-4`}>
-                  <svc.icon size={24} />
+                  <Icon size={24} />
                 </div>
 
                 <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
@@ -162,7 +108,7 @@ export default function Services() {
                   className={`inline-flex items-center gap-1.5 text-sm font-semibold ${c.btn} transition-colors mt-auto`}
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Learn More <ArrowRight size={14} />
+                  {t.services.learnMore} <ArrowRight size={14} />
                 </button>
               </div>
             )

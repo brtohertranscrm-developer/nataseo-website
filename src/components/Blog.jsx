@@ -1,6 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { ArrowRight, Clock, Tag } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+import { useLanguage } from '../contexts/LanguageContext'
+import id from '../translations/id'
+import en from '../translations/en'
 
 const articles = [
   {
@@ -69,6 +72,8 @@ const colorMap = {
 export default function Blog() {
   const sectionRef = useRef(null)
   const navigate = useNavigate()
+  const { lang } = useLanguage()
+  const t = lang === 'id' ? id : en
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -94,13 +99,13 @@ export default function Blog() {
         <div className="text-center mb-12 animate-on-scroll">
           <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-100 rounded-full px-4 py-1.5 mb-4">
             <span className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
-            <span className="text-teal-600 text-sm font-semibold">Tips & Insights</span>
+            <span className="text-teal-600 text-sm font-semibold">{t.blog.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dark-800 mb-4">
-            Artikel & <span className="text-gradient-teal">Panduan Digital</span>
+            {t.blog.h2a} <span className="text-gradient-teal">{t.blog.h2b}</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Tips SEO, web, dan content marketing gratis untuk membantu bisnis Anda tumbuh secara online.
+            {t.blog.desc}
           </p>
         </div>
 
@@ -130,7 +135,7 @@ export default function Blog() {
                   {a.excerpt}
                 </p>
                 <span className="inline-flex items-center gap-1 text-teal-500 text-sm font-semibold group">
-                  Baca Selengkapnya
+                  {t.blog.readMore}
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </article>
