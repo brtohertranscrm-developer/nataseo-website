@@ -69,9 +69,9 @@ export default function FAQ() {
           {t.faq.items.map((item, i) => {
             const isOpen = open === i
             return (
+              <div key={i} className="animate-on-scroll">
               <div
-                key={i}
-                className={`animate-on-scroll border rounded-2xl overflow-hidden transition-all duration-200 ${
+                className={`border rounded-2xl overflow-hidden transition-all duration-200 ${
                   isOpen
                     ? 'border-gold-200 shadow-md shadow-gold-500/5'
                     : 'border-gray-100 hover:border-gray-200'
@@ -107,6 +107,7 @@ export default function FAQ() {
                     {item.a}
                   </p>
                 </div>
+              </div>
               </div>
             )
           })}
