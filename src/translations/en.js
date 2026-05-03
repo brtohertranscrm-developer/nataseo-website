@@ -153,7 +153,7 @@ const en = {
       },
       {
         client: 'Japan Tourged',
-        url: 'https://japan-tourged.vercel.app',
+        url: 'https://japantourgedid.vercel.app/',
         industry: 'International Tourism',
         service: 'Web Engine',
         color: 'rose',

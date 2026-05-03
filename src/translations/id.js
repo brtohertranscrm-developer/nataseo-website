@@ -153,7 +153,7 @@ const id = {
       },
       {
         client: 'Japan Tourged',
-        url: 'https://japan-tourged.vercel.app',
+        url: 'https://japantourgedid.vercel.app/',
         industry: 'Pariwisata Internasional',
         service: 'Web Engine',
         color: 'rose',
