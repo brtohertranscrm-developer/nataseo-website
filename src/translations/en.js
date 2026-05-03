@@ -747,7 +747,7 @@ const en = {
       },
       {
         client: 'Japan Tourged',
-        url: 'https://japantourgedid.vercel.app/',
+        url: 'https://tourged.id',
         industry: 'International Tourism',
         service: 'Web Engine',
         color: 'rose',
