@@ -27,6 +27,7 @@ const ArticleSEOvsAds = lazy(() => import('./pages/ArticleSEOvsAds'))
 const ArticleHargaSEO = lazy(() => import('./pages/ArticleHargaSEO'))
 
 const FreeSEOAudit = lazy(() => import('./pages/FreeSEOAudit'))
+const JasaSEOYogyakarta = lazy(() => import('./pages/JasaSEOYogyakarta'))
 
 const HOME_TITLE = 'NataSEO® — Web Engine · SEO · Content Writing · Software Solution'
 const HOME_DESC = 'NataSEO adalah digital agency berbasis di Yogyakarta, Indonesia. Kami membantu bisnis berkembang secara online melalui web development, SEO, content writing, dan software solution.'
@@ -83,6 +84,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/free-seo-audit" element={<FreeSEOAudit />} />
+        <Route path="/jasa-seo-yogyakarta" element={<JasaSEOYogyakarta />} />
         <Route path="/artikel/jasa-seo-yogyakarta" element={<ArticleSEO />} />
         <Route path="/artikel/jasa-pembuatan-website-yogyakarta" element={<ArticleWeb />} />
         <Route path="/artikel/strategi-content-marketing-bisnis-indonesia" element={<ArticleContent />} />

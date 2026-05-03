@@ -40,6 +40,9 @@ const id = {
     h2b: 'Hasil Nyata',
     desc: 'Dari SEO hingga software, kami menghadirkan solusi digital terintegrasi yang membuat bisnis Anda tumbuh secara online.',
     learnMore: 'Pelajari lebih lanjut',
+    seoYkCtaTitle: 'Target utama: Jasa SEO Yogyakarta',
+    seoYkCtaDesc: 'Lihat halaman layanan khusus untuk bisnis di Jogja.',
+    seoYkCtaBtn: 'Lihat Layanan SEO',
     items: [
       {
         title: 'Web Engine',
@@ -70,6 +73,68 @@ const id = {
         badge: null,
       },
     ],
+  },
+
+  seoYogyakartaPage: {
+    breadcrumb: 'Jasa SEO Yogyakarta',
+    seoTitle: 'Jasa SEO Yogyakarta — Naik Ranking & Leads | NataSEO',
+    seoDesc: 'Jasa SEO Yogyakarta untuk bisnis lokal: audit teknis, optimasi on-page, local SEO/GBP, dan konten yang rank. Konsultasi gratis & report progress.',
+    badge: 'Yogyakarta & Sekitarnya',
+    h1a: 'Jasa SEO',
+    h1b: 'Yogyakarta',
+    lead: 'Kami bantu bisnis di Jogja tampil di halaman 1 Google lewat SEO teknis + konten + local SEO (Google Maps/GBP). Fokus ke leads yang masuk, bukan cuma traffic.',
+    primaryCta: {
+      label: 'Konsultasi Gratis via WhatsApp',
+      href: 'https://wa.me/6285159966646?text=Halo%20NataSEO%2C%20saya%20mau%20konsultasi%20Jasa%20SEO%20Yogyakarta.%20Boleh%20dibantu%3F',
+    },
+    secondaryCta: 'Cek Free SEO Audit',
+    highlights: [
+      'Strategi keyword lokal (Yogyakarta/Jogja) + intent transaksi',
+      'Optimasi on-page + technical SEO (speed, index, struktur)',
+      'Local SEO & Google Business Profile untuk Maps ranking',
+      'Laporan progress rutin dan rekomendasi action yang jelas',
+    ],
+    card: {
+      title: 'Yang biasanya bikin ranking stuck',
+      desc: 'Banyak bisnis sudah posting konten, tapi tidak tembus page 1 karena fondasi teknis & local signals belum kuat.',
+      points: [
+        { kicker: 'Masalah', title: 'Technical SEO', desc: 'Indexing, struktur heading, internal link, dan performance belum rapi.' },
+        { kicker: 'Masalah', title: 'Konten tidak tepat intent', desc: 'Topik ada, tapi tidak menjawab “jasa/biaya/terdekat” yang dicari user.' },
+        { kicker: 'Masalah', title: 'Local signals lemah', desc: 'GBP, NAP consistency, dan landing lokal kurang kuat.' },
+        { kicker: 'Masalah', title: 'Tidak ada tracking', desc: 'Sulit tahu apa yang berhasil tanpa baseline & report rutin.' },
+      ],
+      ctaTitle: 'Mau kita audit cepat dulu?',
+      ctaDesc: 'Kirim link website + layanan bisnis kamu. Kami kasih gambaran prioritasnya.',
+      ctaBtn: 'Chat WhatsApp',
+    },
+    problemLabel: 'Tantangan',
+    problems: [
+      { title: 'Saingan ketat di keyword lokal', desc: 'Butuh kombinasi SEO teknis, konten yang tepat, dan local SEO yang konsisten.' },
+      { title: 'Website ada tapi leads sepi', desc: 'Masalah sering ada di intent keyword, halaman layanan, dan CTA yang kurang jelas.' },
+      { title: 'Ranking naik tapi tidak menghasilkan', desc: 'Traffic tanpa intent transaksi tidak akan jadi omzet. Kita fokus ke yang mendatangkan calon pembeli.' },
+    ],
+    deliver: {
+      badge: 'Deliverables',
+      h2: 'Apa yang Anda dapatkan dari layanan SEO',
+      desc: 'Fokus pada eksekusi yang bisa diukur: perbaikan teknis, konten, dan local presence.',
+      items: [
+        { kicker: 'Audit', title: 'SEO Audit Teknis', desc: 'Indexability, speed, struktur halaman, schema, dan issue prioritas.' },
+        { kicker: 'On-Page', title: 'Optimasi Halaman Layanan', desc: 'Struktur, copy, internal linking, dan CTA untuk konversi.' },
+        { kicker: 'Local', title: 'Local SEO & GBP', desc: 'Optimasi profil, strategi review, dan sinyal lokal untuk Maps.' },
+        { kicker: 'Konten', title: 'Content Plan', desc: 'Cluster artikel pendukung untuk menembak keyword turunan di Yogyakarta.' },
+        { kicker: 'Tracking', title: 'Report & Monitoring', desc: 'Baseline, perubahan ranking, traffic, dan rekomendasi action berikutnya.' },
+        { kicker: 'Support', title: 'Pendampingan', desc: 'Prioritas perbaikan yang jelas + komunikasi responsif.' },
+      ],
+    },
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: 'NataSEO',
+      url: 'https://nataseo.asia/jasa-seo-yogyakarta',
+      areaServed: [{ '@type': 'City', name: 'Yogyakarta' }],
+      serviceType: 'SEO Service',
+      address: { '@type': 'PostalAddress', addressLocality: 'Yogyakarta', addressCountry: 'ID' },
+    },
   },
 
   // TechStack

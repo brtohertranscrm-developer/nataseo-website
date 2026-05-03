@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react'
 import { Globe, Search, FileText, Code2, ArrowRight, CheckCircle } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 import id from '../translations/id'
 import en from '../translations/en'
@@ -113,6 +114,23 @@ export default function Services() {
               </div>
             )
           })}
+        </div>
+
+        <div className="animate-on-scroll mt-10 text-center">
+          <div className="inline-flex flex-col sm:flex-row items-center justify-center gap-3 bg-teal-50 border border-teal-100 rounded-2xl px-5 py-4">
+            <div className="text-sm font-semibold text-dark-800">
+              {t.services.seoYkCtaTitle}
+            </div>
+            <div className="text-sm text-gray-600">
+              {t.services.seoYkCtaDesc}
+            </div>
+            <Link
+              to="/jasa-seo-yogyakarta"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-500 hover:bg-teal-600 text-white font-bold rounded-xl transition-colors shadow-sm shadow-teal-500/25 whitespace-nowrap"
+            >
+              {t.services.seoYkCtaBtn} <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

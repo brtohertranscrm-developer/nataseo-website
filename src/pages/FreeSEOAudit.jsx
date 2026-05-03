@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { ArrowLeft, Search, CheckCircle2, AlertCircle, XCircle, ChevronRight, Activity, Smartphone, Lock, Globe } from 'lucide-react'
+import { ArrowLeft, Search, CheckCircle2, ChevronRight, Activity, Smartphone, Lock, Globe } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 import id from '../translations/id'
@@ -22,6 +22,13 @@ export default function FreeSEOAudit() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  const mockMetrics = [
+    { key: 'performance', icon: Activity, score: 63, status: 'warning' },
+    { key: 'seo', icon: Globe, score: 71, status: 'warning' },
+    { key: 'mobile', icon: Smartphone, score: 86, status: 'success' },
+    { key: 'security', icon: Lock, score: 92, status: 'success' },
+  ]
 
   useEffect(() => {
     let interval
@@ -70,13 +77,6 @@ export default function FreeSEOAudit() {
     const text = encodeURIComponent(`Halo NataSEO, saya ${name}. Saya baru saja melakukan Free SEO Audit untuk website saya: ${url}. Saya ingin mendapatkan laporan detail dan rekomendasi perbaikannya.`)
     window.open(`https://wa.me/6281329598263?text=${text}`, '_blank')
   }
-
-  const mockMetrics = [
-    { key: 'performance', icon: Activity, score: Math.floor(Math.random() * 30) + 40, status: 'warning' },
-    { key: 'seo', icon: Globe, score: Math.floor(Math.random() * 40) + 50, status: 'warning' },
-    { key: 'mobile', icon: Smartphone, score: Math.floor(Math.random() * 20) + 75, status: 'success' },
-    { key: 'security', icon: Lock, score: Math.floor(Math.random() * 10) + 85, status: 'success' },
-  ]
 
   const getScoreColor = (score) => {
     if (score >= 80) return 'text-green-500'

@@ -5,6 +5,8 @@ import path from 'path'
 
 const ROUTES = [
   { path: '/',                                                     priority: '1.0', changefreq: 'weekly'  },
+  { path: '/jasa-seo-yogyakarta',                                 priority: '1.0', changefreq: 'weekly'  },
+  { path: '/free-seo-audit',                                      priority: '0.8', changefreq: 'weekly'  },
   { path: '/artikel/jasa-seo-yogyakarta',                         priority: '0.9', changefreq: 'monthly' },
   { path: '/artikel/jasa-pembuatan-website-yogyakarta',           priority: '0.9', changefreq: 'monthly' },
   { path: '/artikel/jasa-software-development-yogyakarta',        priority: '0.9', changefreq: 'monthly' },
