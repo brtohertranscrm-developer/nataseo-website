@@ -30,6 +30,9 @@ const FreeSEOAudit = lazy(() => import('./pages/FreeSEOAudit'))
 const JasaSEOYogyakarta = lazy(() => import('./pages/JasaSEOYogyakarta'))
 const JasaSEOSleman = lazy(() => import('./pages/JasaSEOSleman'))
 const JasaSEOBantul = lazy(() => import('./pages/JasaSEOBantul'))
+const JasaSEOTravelAgent = lazy(() => import('./pages/JasaSEOTravelAgent'))
+const JasaSEORentalKendaraan = lazy(() => import('./pages/JasaSEORentalKendaraan'))
+const JasaSEOHotel = lazy(() => import('./pages/JasaSEOHotel'))
 
 const HOME_TITLE = 'NataSEO® — Web Engine · SEO · Content Writing · Software Solution'
 const HOME_DESC = 'NataSEO adalah digital agency berbasis di Yogyakarta, Indonesia. Kami membantu bisnis berkembang secara online melalui web development, SEO, content writing, dan software solution.'
@@ -89,6 +92,9 @@ export default function App() {
         <Route path="/jasa-seo-yogyakarta" element={<JasaSEOYogyakarta />} />
         <Route path="/jasa-seo-sleman" element={<JasaSEOSleman />} />
         <Route path="/jasa-seo-bantul" element={<JasaSEOBantul />} />
+        <Route path="/jasa-seo-travel-agent" element={<JasaSEOTravelAgent />} />
+        <Route path="/jasa-seo-rental-kendaraan" element={<JasaSEORentalKendaraan />} />
+        <Route path="/jasa-seo-hotel" element={<JasaSEOHotel />} />
         <Route path="/artikel/jasa-seo-yogyakarta" element={<ArticleSEO />} />
         <Route path="/artikel/jasa-pembuatan-website-yogyakarta" element={<ArticleWeb />} />
         <Route path="/artikel/strategi-content-marketing-bisnis-indonesia" element={<ArticleContent />} />
