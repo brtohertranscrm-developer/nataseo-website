@@ -126,6 +126,97 @@ const id = {
         { kicker: 'Support', title: 'Pendampingan', desc: 'Prioritas perbaikan yang jelas + komunikasi responsif.' },
       ],
     },
+    pricing: {
+      badge: 'Paket SEO',
+      h2: 'Pilih paket yang sesuai kebutuhan',
+      desc: 'Mulai dari fondasi SEO lokal sampai growth plan yang agresif. Bisa disesuaikan setelah audit.',
+      note: '*Harga bisa menyesuaikan kompleksitas website & kompetisi keyword.',
+      plans: [
+        {
+          name: 'Starter Local',
+          price: 'Rp 1.9jt',
+          unit: '/bulan',
+          bestFor: 'Cocok untuk bisnis lokal yang baru mulai SEO di Jogja.',
+          features: [
+            'Technical SEO audit (prioritas)',
+            'Optimasi 1 halaman layanan utama',
+            'Setup/optimasi Google Business Profile',
+            'Basic tracking + report bulanan',
+          ],
+          cta: 'Ambil Starter',
+        },
+        {
+          name: 'Growth',
+          price: 'Rp 3.9jt',
+          unit: '/bulan',
+          bestFor: 'Untuk bisnis yang ingin naik ranking + mulai membangun konten cluster.',
+          highlight: true,
+          features: [
+            'Technical SEO audit + fixes prioritas',
+            'Optimasi 3 halaman utama (service/landing)',
+            'Local SEO + review strategy',
+            '2 konten artikel/bulan (keyword turunan Jogja)',
+            'Report + rekomendasi action',
+          ],
+          cta: 'Ambil Growth',
+        },
+        {
+          name: 'Scale',
+          price: 'Rp 6.9jt',
+          unit: '/bulan',
+          bestFor: 'Untuk kompetisi tinggi dan target leads yang lebih agresif.',
+          features: [
+            'Technical SEO roadmap + implementasi',
+            'Optimasi 5+ halaman (termasuk conversion copy)',
+            '4 konten artikel/bulan + internal linking',
+            'Link acquisition/PR outreach (sesuai niche)',
+            'Report mingguan + tracking KPI',
+          ],
+          cta: 'Ambil Scale',
+        },
+      ],
+    },
+    leadForm: {
+      title: 'Minta Audit Cepat (Gratis)',
+      desc: 'Isi 3 hal ini — kami balas dengan prioritas action yang paling ngaruh untuk “jasa seo yogyakarta”.',
+      fields: {
+        url: 'URL Website',
+        niche: 'Bidang Usaha (niche)',
+        whatsapp: 'Nomor WhatsApp',
+      },
+      placeholder: {
+        url: 'https://bisnisanda.com',
+        niche: 'Contoh: klinik gigi, kontraktor, rental mobil…',
+        whatsapp: 'Contoh: 0812xxxxxxx',
+      },
+      submit: 'Kirim',
+      successTitle: 'Terkirim!',
+      successDesc: 'Kami akan balas via WhatsApp secepatnya.',
+      waBtn: 'Chat WhatsApp Sekarang',
+    },
+    faq: {
+      badge: 'FAQ',
+      h2: 'Pertanyaan yang sering ditanyakan',
+      desc: 'Jawaban singkat sebelum mulai.',
+      items: [
+        {
+          q: 'Berapa lama SEO sampai kelihatan hasilnya?',
+          a: 'Umumnya 3–6 bulan untuk melihat pergerakan yang stabil. Keyword lokal seperti “jasa SEO Yogyakarta” bisa lebih cepat jika fondasi teknis dan local signals rapi.',
+        },
+        {
+          q: 'Apakah ada garansi ranking #1?',
+          a: 'Tidak ada yang bisa menjamin #1 untuk semua keyword. Yang kami janjikan adalah proses yang benar, transparan, dan fokus pada KPI bisnis (leads/telepon/WA).',
+        },
+        {
+          q: 'Apakah termasuk Google Maps/Google Business Profile?',
+          a: 'Ya, local SEO dan optimasi Google Business Profile termasuk di paket, terutama untuk bisnis yang targetnya pelanggan area Jogja.',
+        },
+        {
+          q: 'Kalau website saya belum siap SEO bagaimana?',
+          a: 'Kita mulai dari audit. Biasanya perbaikan paling cepat ada di speed, struktur halaman layanan, dan tracking. Setelah itu baru scale konten & authority.',
+        },
+      ],
+    },
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',

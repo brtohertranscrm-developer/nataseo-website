@@ -126,6 +126,97 @@ const en = {
         { kicker: 'Support', title: 'Ongoing Support', desc: 'Clear priorities and responsive communication.' },
       ],
     },
+    pricing: {
+      badge: 'SEO Packages',
+      h2: 'Choose a plan that fits',
+      desc: 'From local foundations to an aggressive growth plan. We can adjust after the audit.',
+      note: '*Pricing may vary by website complexity and keyword competition.',
+      plans: [
+        {
+          name: 'Starter Local',
+          price: '$119',
+          unit: '/mo',
+          bestFor: 'Best for local businesses starting SEO in Jogja.',
+          features: [
+            'Technical SEO audit (prioritized)',
+            'Optimize 1 primary service page',
+            'Google Business Profile setup/optimization',
+            'Basic tracking + monthly report',
+          ],
+          cta: 'Pick Starter',
+        },
+        {
+          name: 'Growth',
+          price: '$249',
+          unit: '/mo',
+          bestFor: 'For ranking gains + starting a supporting content cluster.',
+          highlight: true,
+          features: [
+            'Technical SEO audit + priority fixes',
+            'Optimize 3 key pages (service/landing)',
+            'Local SEO + review strategy',
+            '2 articles/mo (Jogja long-tail keywords)',
+            'Reporting + next-step actions',
+          ],
+          cta: 'Pick Growth',
+        },
+        {
+          name: 'Scale',
+          price: '$449',
+          unit: '/mo',
+          bestFor: 'For higher competition and more aggressive lead targets.',
+          features: [
+            'SEO roadmap + implementation',
+            'Optimize 5+ pages (including conversion copy)',
+            '4 articles/mo + internal linking',
+            'Link acquisition/PR outreach (by niche)',
+            'Weekly reporting + KPI tracking',
+          ],
+          cta: 'Pick Scale',
+        },
+      ],
+    },
+    leadForm: {
+      title: 'Request a Free Quick Audit',
+      desc: 'Share these 3 details—we’ll reply with the highest-impact actions for “SEO service Yogyakarta”.',
+      fields: {
+        url: 'Website URL',
+        niche: 'Business niche',
+        whatsapp: 'WhatsApp number',
+      },
+      placeholder: {
+        url: 'https://yourbusiness.com',
+        niche: 'Example: dental clinic, contractor, car rental…',
+        whatsapp: 'Example: +62 812xxxxxxx',
+      },
+      submit: 'Send',
+      successTitle: 'Sent!',
+      successDesc: 'We’ll reply via WhatsApp as soon as possible.',
+      waBtn: 'Chat on WhatsApp',
+    },
+    faq: {
+      badge: 'FAQ',
+      h2: 'Common questions',
+      desc: 'Quick answers before you start.',
+      items: [
+        {
+          q: 'How long until SEO results show?',
+          a: 'Typically 3–6 months for stable movement. Local intent keywords can move faster when technical foundations and local signals are strong.',
+        },
+        {
+          q: 'Do you guarantee #1 rankings?',
+          a: 'No one can guarantee #1 for every keyword. We guarantee a clean process, transparency, and focus on business KPIs (leads/calls/WhatsApp).',
+        },
+        {
+          q: 'Does it include Google Maps/GBP?',
+          a: 'Yes—local SEO and Google Business Profile optimization are included, especially for businesses targeting customers around Jogja.',
+        },
+        {
+          q: "What if my website isn't SEO-ready?",
+          a: 'We start with an audit. The fastest wins are usually speed, service page structure, and tracking—then we scale content and authority.',
+        },
+      ],
+    },
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',

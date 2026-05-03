@@ -202,6 +202,14 @@ export default function ArticleSEO() {
             >
               Konsultasi Gratis Sekarang
             </button>
+            <div className="mt-4">
+              <button
+                onClick={() => navigate('/jasa-seo-yogyakarta')}
+                className="text-teal-300 hover:text-teal-200 text-sm font-semibold underline underline-offset-4"
+              >
+                Lihat halaman layanan: Jasa SEO Yogyakarta
+              </button>
+            </div>
           <RelatedArticles currentSlug="/artikel/jasa-seo-yogyakarta" />
           </div>
         </div>

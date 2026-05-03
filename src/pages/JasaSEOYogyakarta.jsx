@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, CheckCircle, MapPin, TrendingUp } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle, ChevronDown, MapPin, TrendingUp } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import id from '../translations/id'
 import en from '../translations/en'
@@ -16,10 +16,45 @@ export default function JasaSEOYogyakarta() {
   const { lang } = useLanguage()
   const t = lang === 'id' ? id : en
   const c = t.seoYogyakartaPage
+  const [faqOpen, setFaqOpen] = useState(0)
+  const [formStatus, setFormStatus] = useState('idle') // idle | sending | sent
+  const [form, setForm] = useState({ url: '', niche: '', whatsapp: '' })
+
+  const faqJsonLd = useMemo(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: c.faq.items.map((it) => ({
+      '@type': 'Question',
+      name: it.q,
+      acceptedAnswer: { '@type': 'Answer', text: it.a },
+    })),
+  }), [c.faq.items])
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    if (!form.url || !form.whatsapp) return
+    setFormStatus('sending')
+    try {
+      await fetch('https://formspree.io/f/maqvwvlz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: 'Lead dari Money Page',
+          phone: form.whatsapp,
+          email: 'Tidak diisi (Lead dari Money Page)',
+          service: 'Jasa SEO Yogyakarta',
+          message: `URL: ${form.url}\nNiche: ${form.niche || '-'}\nPermintaan: audit cepat + konsultasi.`,
+        }),
+      })
+      setFormStatus('sent')
+    } catch {
+      setFormStatus('sent')
+    }
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -34,6 +69,9 @@ export default function JasaSEOYogyakarta() {
         <meta property="og:image" content="https://nataseo.asia/og-image.webp" />
         <script type="application/ld+json">
           {JSON.stringify(c.jsonLd)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqJsonLd)}
         </script>
       </Helmet>
 
@@ -176,6 +214,158 @@ export default function JasaSEOYogyakarta() {
               ))}
             </div>
           </section>
+
+          <section className="mt-16">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-600 px-4 py-1.5 rounded-full text-sm font-semibold">
+                {c.pricing.badge}
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-dark-800 mt-4">{c.pricing.h2}</h2>
+              <p className="text-gray-600 mt-3 max-w-2xl mx-auto">{c.pricing.desc}</p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-6">
+              {c.pricing.plans.map((p) => (
+                <div
+                  key={p.name}
+                  className={`rounded-3xl border-2 p-7 bg-white shadow-sm ${p.highlight ? 'border-teal-400 shadow-teal-500/10' : 'border-gray-100'}`}
+                >
+                  <div className="flex items-start justify-between gap-3 mb-4">
+                    <div className="text-lg font-extrabold text-dark-800">{p.name}</div>
+                    {p.highlight && (
+                      <span className="px-3 py-1 rounded-full text-xs font-bold bg-teal-500 text-white">
+                        {lang === 'id' ? 'Paling Diminati' : 'Most Popular'}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-baseline gap-1.5 mb-2">
+                    <span className={`text-3xl font-extrabold ${p.highlight ? 'text-teal-600' : 'text-dark-800'}`}>{p.price}</span>
+                    <span className="text-sm font-semibold text-gray-400">{p.unit}</span>
+                  </div>
+                  <div className="text-sm text-gray-600 mb-5">{p.bestFor}</div>
+                  <ul className="space-y-2.5 mb-6">
+                    {p.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5">
+                        <CheckCircle size={16} className={`flex-shrink-0 mt-0.5 ${p.highlight ? 'text-teal-500' : 'text-gray-400'}`} />
+                        <span className="text-sm text-gray-700">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={c.primaryCta.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold transition-colors ${
+                      p.highlight
+                        ? 'bg-teal-500 hover:bg-teal-600 text-white shadow-md shadow-teal-500/25'
+                        : 'bg-gray-50 hover:bg-teal-50 text-dark-800 hover:text-teal-700 border border-gray-200 hover:border-teal-200'
+                    }`}
+                  >
+                    {p.cta} <ArrowRight size={16} />
+                  </a>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-gray-400 mt-4 text-center">{c.pricing.note}</p>
+          </section>
+
+          <section className="mt-16">
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
+              <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-7 sm:p-8">
+                <h2 className="text-xl sm:text-2xl font-extrabold text-dark-800 mb-2">{c.leadForm.title}</h2>
+                <p className="text-gray-600 mb-6">{c.leadForm.desc}</p>
+
+                {formStatus === 'sent' ? (
+                  <div className="bg-teal-50 border border-teal-100 rounded-2xl p-6">
+                    <div className="text-lg font-extrabold text-dark-800 mb-1">{c.leadForm.successTitle}</div>
+                    <div className="text-sm text-gray-600 mb-5">{c.leadForm.successDesc}</div>
+                    <a
+                      href={c.primaryCta.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-bold rounded-xl transition-colors"
+                    >
+                      {c.leadForm.waBtn} <ArrowRight size={16} />
+                    </a>
+                  </div>
+                ) : (
+                  <form onSubmit={onSubmit} className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-1.5">{c.leadForm.fields.url}</label>
+                      <input
+                        value={form.url}
+                        onChange={(e) => setForm((f) => ({ ...f, url: e.target.value }))}
+                        placeholder={c.leadForm.placeholder.url}
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-300"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-1.5">{c.leadForm.fields.niche}</label>
+                      <input
+                        value={form.niche}
+                        onChange={(e) => setForm((f) => ({ ...f, niche: e.target.value }))}
+                        placeholder={c.leadForm.placeholder.niche}
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-300"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-1.5">{c.leadForm.fields.whatsapp}</label>
+                      <input
+                        value={form.whatsapp}
+                        onChange={(e) => setForm((f) => ({ ...f, whatsapp: e.target.value }))}
+                        placeholder={c.leadForm.placeholder.whatsapp}
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-300"
+                        required
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={formStatus === 'sending'}
+                      className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-teal-500 hover:bg-teal-600 disabled:opacity-60 text-white font-extrabold rounded-xl transition-colors"
+                    >
+                      {c.leadForm.submit} <ArrowRight size={16} />
+                    </button>
+                  </form>
+                )}
+              </div>
+
+              <div className="bg-gray-50 border border-gray-100 rounded-3xl p-7 sm:p-8">
+                <div className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-1.5 text-sm font-semibold text-gray-700 mb-4">
+                  {c.faq.badge}
+                </div>
+                <h2 className="text-xl sm:text-2xl font-extrabold text-dark-800 mb-2">{c.faq.h2}</h2>
+                <p className="text-gray-600 mb-6">{c.faq.desc}</p>
+
+                <div className="space-y-3">
+                  {c.faq.items.map((it, idx) => {
+                    const open = faqOpen === idx
+                    return (
+                      <button
+                        key={it.q}
+                        type="button"
+                        onClick={() => setFaqOpen((cur) => (cur === idx ? -1 : idx))}
+                        className="w-full text-left bg-white border border-gray-200 hover:border-teal-200 rounded-2xl p-5 transition-colors"
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="font-extrabold text-dark-800">{it.q}</div>
+                          <ChevronDown
+                            size={18}
+                            className={`flex-shrink-0 mt-0.5 text-gray-400 transition-transform ${open ? 'rotate-180' : ''}`}
+                          />
+                        </div>
+                        {open && (
+                          <div className="text-sm text-gray-600 leading-relaxed mt-3">
+                            {it.a}
+                          </div>
+                        )}
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
 
@@ -184,4 +374,3 @@ export default function JasaSEOYogyakarta() {
     </div>
   )
 }
-
