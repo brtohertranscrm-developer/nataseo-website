@@ -713,7 +713,7 @@ const en = {
     cases: [
       {
         client: 'Brothers Trans',
-        url: 'https://beta.brotherstrans.id',
+        url: 'https://brotherstrans.id',
         industry: 'Transportation',
         service: 'Web Engine',
         color: 'blue',
